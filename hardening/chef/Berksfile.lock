@@ -1,0 +1,7 @@
+DEPENDENCIES
+  ssh_hardening
+    path: .
+    metadata: true
+
+GRAPH
+  ssh_hardening (0.1.0)
