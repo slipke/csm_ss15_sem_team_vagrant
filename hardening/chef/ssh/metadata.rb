@@ -5,5 +5,6 @@ license          'all_rights'
 description      'openssh security hardening for debian/ubuntu'
 long_description 'openssh security hardening for debian/ubuntu'
 version          '0.1.0'
-#depends		 "users"
 
+#supports "ubuntu"
+#supports "debian"
