@@ -1,6 +1,13 @@
-# csm_ss15_sem_team_vagrant
-CSM SS15 System Engineering &amp; Management: Team Vagrant
 
-TODO:
 
-* How to run this file?
+@@@ WIP @@@
+
+`librarian-puppet install`
+`vagrant up`
+
+Documentation: 
+
+Nginx:
+https://forge.puppetlabs.com/jfryman/nginx
+https://forge.puppetlabs.com/nodes/php
+https://forge.puppetlabs.com/puppetlabs/mysql
