@@ -19,4 +19,5 @@
 #
 
 include_recipe "mysql_hardening::check_mysql"
+
 include_recipe "mysql_hardening::mysql_hardening"

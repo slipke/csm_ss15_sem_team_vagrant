@@ -18,34 +18,58 @@
 # limitations under the License.
 #
 
-# run script with parameters
-# TODO
+# this script runs the same actions as the "mysql_secure_installation" script
 
-# Parameters: root-password, change root-password, new-password, new-password-repeat, remove anonymous user, dissallow root login, remove test database, reload privileges 
-# do two different script, one with the password change and one without (skip the pw and pw repeat)
+# change the root password (default pw after fresh installation is empty)
+if node['mysql']['change_root_password'] == true
+  result = `mysql -p#{node['mysql']['root_password']} -e "UPDATE mysql.user SET Password = PASSWORD('#{node['mysql']['new_root_password']}') WHERE User = 'root';" 2>&1`
+  if result != ''
+      log "mysql_hardening" do
+      message "could not change mysql root password - MySql error message: "+result
+      level :warn
+    end
+  end 
+end
 
-#`echo -e "\npasswd \ny \ny \nabc \nabc \ny \ny \ny \ny" | mysql_secure_installation`     
+# remove anonymous user
+if node['mysql']['remove_anonmymous_user'] == true
+   result = `mysql -p#{node['mysql']['root_password']} -e "DELETE FROM mysql.user WHERE User='';" 2>&1`
+     if result != ''
+      log "mysql_hardening" do
+      message "could not remove anonymous user - MySql error message: "+result
+      level :warn
+    end
+  end 
+end
+ 
+# deactivate remote root 
+if node['mysql']['disallow_root_login'] == true
+  result = `mysql -p#{node['mysql']['root_password']} -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');" 2>&1`
+  if result != ''
+      log "mysql_hardening" do
+      message "could not deactivate remote root - MySql error message: "+result
+      level :warn
+    end
+  end  
+end 
 
-puts node['mysql']['new_root_password']
-           
-# if node['mysql']['change_root_password'] == "y" 
-#   `echo -e "\n#{node['mysql']['root_password']} \n#{node['mysql']['change_root_password']} \ny \n#{node['mysql']['new_root_password']} \n#{node['mysql']['new_root_password']} \n#{node['mysql']['remove_anonmymous_user']} \n#{node['mysql']['disallow_root_login']} \n#{node['mysql']['remove_test_database'] } \ny" | mysql_secure_installation`
-# else
-#                      
-# end 
+# delete the demo database
+if node['mysql']['remove_test_database'] == true
+  # redirect from stderr 2 stdout
+  result =`mysql -p#{node['mysql']['root_password']} -e "DROP DATABASE test;" 2>&1`
+    if result != ''
+      log "mysql_hardening" do
+      message "could not remove demo database - MySql error message: "+result
+      level :warn
+    end
+  end  
+end
 
-
-# Make sure that NOBODY can access the server without a password
-mysql -e "UPDATE mysql.user SET Password = PASSWORD('abc') WHERE User = 'root'"
-# Kill the anonymous users
-mysql -e "DROP USER ''@'localhost'"
-# Because our hostname varies we'll use some Bash magic here.
-mysql -e "DROP USER ''@'$(hostname)'"
-# Kill off the demo database
-mysql -e "DROP DATABASE test"
-# Make our changes take effect
-mysql -e "FLUSH PRIVILEGES"
-# Any subsequent tries to run queries this way will get access denied because lack of usr/pwd param
-
-
-
+ # flush privileges to apply all the changes
+result = `mysql -p#{node['mysql']['root_password']} -e "FLUSH PRIVILEGES;" 2>&1`
+  if result != ''
+    log "mysql_hardening" do
+    message "could not flush privileges - MySql error message: "+result
+    level :warn
+  end
+end  
