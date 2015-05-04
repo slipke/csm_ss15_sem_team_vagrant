@@ -1,0 +1,6 @@
+name             'HdM-tomcat-VM'
+maintainer       'Korbinian Kram'
+maintainer_email 'kk114@hdm-stuttgart.de'
+license          'All rights reserved'
+description      'this suite installs a tomcat server with an tomcat management User '
+version          '1.0.0'
