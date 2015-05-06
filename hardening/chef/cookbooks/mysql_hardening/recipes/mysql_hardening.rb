@@ -22,7 +22,11 @@
 
 # change the root password (default pw after fresh installation is empty)
 if node['mysql']['change_root_password'] == true
-  result = `mysql -p#{node['mysql']['root_password']} -e "UPDATE mysql.user SET Password = PASSWORD('#{node['mysql']['new_root_password']}') WHERE User = 'root';" 2>&1`
+    if node['mysql']['root_password'] == ''
+        result = `mysql -u root -e "UPDATE mysql.user SET Password = PASSWORD('#{node['mysql']['new_root_password']}') WHERE User = 'root';" 2>&1`
+    else    
+        result = `mysql -u root -p#{node['mysql']['root_password']} -e "UPDATE mysql.user SET Password = PASSWORD('#{node['mysql']['new_root_password']}') WHERE User = 'root';" 2>&1`
+    end
   if result != ''
       log "mysql_hardening" do
       message "could not change mysql root password - MySql error message: "+result
@@ -33,7 +37,11 @@ end
 
 # remove anonymous user
 if node['mysql']['remove_anonmymous_user'] == true
-   result = `mysql -p#{node['mysql']['root_password']} -e "DELETE FROM mysql.user WHERE User='';" 2>&1`
+    if node['mysql']['root_password'] == ''
+        result = `mysql -u root -e "DELETE FROM mysql.user WHERE User='';" 2>&1`
+    else    
+        result = `mysql -u root -p#{node['mysql']['root_password']} -e "DELETE FROM mysql.user WHERE User='';" 2>&1`
+    end
      if result != ''
       log "mysql_hardening" do
       message "could not remove anonymous user - MySql error message: "+result
@@ -44,7 +52,11 @@ end
  
 # deactivate remote root 
 if node['mysql']['disallow_root_login'] == true
-  result = `mysql -p#{node['mysql']['root_password']} -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');" 2>&1`
+    if node['mysql']['root_password'] == ''
+        result = `mysql -u root -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');" 2>&1`
+    else    
+        result = `mysql -u root -p#{node['mysql']['root_password']} -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');" 2>&1`
+    end
   if result != ''
       log "mysql_hardening" do
       message "could not deactivate remote root - MySql error message: "+result
@@ -56,7 +68,11 @@ end
 # delete the demo database
 if node['mysql']['remove_test_database'] == true
   # redirect from stderr 2 stdout
-  result =`mysql -p#{node['mysql']['root_password']} -e "DROP DATABASE test;" 2>&1`
+    if node['mysql']['root_password'] == ''
+        result =`mysql -u root -e "DROP DATABASE test;" 2>&1`
+    else
+        result =`mysql -u root -p#{node['mysql']['root_password']} -e "DROP DATABASE test;" 2>&1`
+    end
     if result != ''
       log "mysql_hardening" do
       message "could not remove demo database - MySql error message: "+result
@@ -66,7 +82,11 @@ if node['mysql']['remove_test_database'] == true
 end
 
  # flush privileges to apply all the changes
-result = `mysql -p#{node['mysql']['root_password']} -e "FLUSH PRIVILEGES;" 2>&1`
+if node['mysql']['root_password'] == ''
+    result = `mysql -u root -e "FLUSH PRIVILEGES;" 2>&1`
+else
+    result = `mysql -u root -p#{node['mysql']['root_password']} -e "FLUSH PRIVILEGES;" 2>&1`
+end
   if result != ''
     log "mysql_hardening" do
     message "could not flush privileges - MySql error message: "+result

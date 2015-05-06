@@ -31,12 +31,17 @@ while node['user'].size > i do
   password = `openssl passwd -1 #{node['user'][i]['password']}`
   password = password.chomp
 
-  if node['user'][i]['system'] == 'false'
+  if node['user'][i]['system'] == false
       #create user, add to sudo group if wanted
       user "#{node['user'][i]['name']}" do
 	supports :manage_home => true
 	home "/home/#{node['user'][i]['name']}"
 	gid "#{node['user'][i]['name']}"
+        
+        if node['user'][i]['sudo'] == true
+           gid "sudo" 
+        end
+        
 	comment 'created by chef'
 	password "#{password}"
 	shell '/bin/bash'
@@ -48,6 +53,8 @@ while node['user'].size > i do
 	owner "#{node['user'][i]['name']}"
 	group "#{node['user'][i]['name']}"
 	mode '0700'
+        # Debian 8 fix, no user dir is beeing created
+        recursive true
 	action :create
       end
 
@@ -61,8 +68,12 @@ while node['user'].size > i do
 	  :sshPublicKeys => node['user'][i][:publicKey]
 	})
       end
+      
+      # add user to the group sudo
+      
+      
   else 
-      #create user, add to sudo group if wanted
+      #create a system user
       user "#{node['user'][i]['name']}" do
 	system true
 	comment 'created by chef'

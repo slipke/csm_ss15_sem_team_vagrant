@@ -30,8 +30,8 @@ default['nginx']['large_client_header_buffers'] 	= ['2 1k']  # specify the max n
 # further information about HTTP headers https://www.owasp.org/index.php/List_of_useful_HTTP_headers
 default['nginx']['X_Frame_Headers'] 			= ['SAMEORIGIN']  # options: "DENY", "SAMEORIGIN", "ALLOW-FROMuri"; avoid clickjacking 
 default['nginx']['X_Content_Type_Options'] 		= ['nosniff']  # options: "nosniff" or leave blank
-default['nginx']['X_XSS_Protection'] 			= ['"1; mode=block";']  # options: "1; mode=block", "0", "1"
-default['nginx']['Strict_Transport_Security'] 		= ['"max-age=31536000; includeSubdomains;" preload;'] # options: "max-age= in seconds", "includeSubdomains", "preload"; any combination of those options is possible
+default['nginx']['X_XSS_Protection'] 			= ['"1; mode=block"']  # options: "1; mode=block", "0", "1"
+default['nginx']['Strict_Transport_Security'] 		= ['"max-age=31536000; includeSubdomains; preload"'] # options: "max-age= in seconds", "includeSubdomains", "preload" any combination of those options is possible
                                                            
 # misc
 default['nginx']['disable_default_site']		= 'true' # options: true, false; remove the default system link from sites-enabled 	                                                    

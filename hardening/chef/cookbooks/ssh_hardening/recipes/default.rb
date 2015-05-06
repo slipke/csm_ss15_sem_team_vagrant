@@ -19,5 +19,7 @@
 #
 
 # this recipe adds users with the corresponding publickeys. If users have already been initialized, you can skip this recipe and proceed with the hardening. Please be aware of the nopassword login if no public key is set.
+
 include_recipe "ssh_hardening::usermanagement"
-#include_recipe "ssh_hardening::server"
+
+include_recipe "ssh_hardening::server"

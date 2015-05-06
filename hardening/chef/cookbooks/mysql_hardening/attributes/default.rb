@@ -21,12 +21,12 @@
 # Parameters: root-password, change root-password, new-password, new-password-repeat, remove anonymous user, dissallow root login, remove test database
 
 # hardening setting and basic optimization
-default['mysql']['change_root_password'] 			= true  # options: "y", "n"; 
-default['mysql']['root_password'] 				= 'abcd'  # options: String
-default['mysql']['new_root_password'] 				= 'abcd' # options: String
-default['mysql']['remove_anonmymous_user'] 			= true  # options: "y", "n"; 
-default['mysql']['disallow_root_login'] 			= true  # options: "y", "n"; 
-default['mysql']['remove_test_database'] 			= true # options: "y", "n"; 
+default['mysql']['change_root_password'] 			= true  		# options: true, false; 
+default['mysql']['root_password'] 					= ''  			# options: String; default: blank
+default['mysql']['new_root_password'] 				= 'topSecret' 	# options: String
+default['mysql']['remove_anonmymous_user'] 			= true  		# options: true, false; 
+default['mysql']['disallow_root_login'] 			= true  		# options: true, false; 
+default['mysql']['remove_test_database'] 			= true 			# options: true, false;  
 
 
 
