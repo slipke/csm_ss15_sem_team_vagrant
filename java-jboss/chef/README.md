@@ -16,9 +16,9 @@ HEX( MD5( username ':' realm ':' password))
 The credentials can be modified after the installation with the user.sh script. For this use case follow the official [documentation](https://docs.jboss.org/author/display/AS71/add-user+utility) on:
 
 Dependencies
-	* [apt-get](https://supermarket.chef.io/cookbooks/apt)
-	* [java](https://supermarket.chef.io/cookbooks/java)
-	* [jboss](https://supermarket.chef.io/cookbooks/jboss7)
+* [apt-get](https://supermarket.chef.io/cookbooks/apt)
+* [java](https://supermarket.chef.io/cookbooks/java)
+* [jboss](https://supermarket.chef.io/cookbooks/jboss7)
 
 
 installation
