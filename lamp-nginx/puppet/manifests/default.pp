@@ -29,3 +29,6 @@ class { '::mysql::server':
     },
   },
 }
+
+# TEST
+include test

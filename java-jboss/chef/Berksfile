@@ -1,0 +1,10 @@
+source "https://supermarket.chef.io"
+
+
+
+metadata
+
+
+cookbook 'apt'
+cookbook 'java'
+cookbook 'jboss7', '~> 0.11.1'

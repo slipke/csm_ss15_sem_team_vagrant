@@ -1,0 +1,6 @@
+name             'HdM-jboss-puppet'
+maintainer       'Korbinian Kram'
+maintainer_email 'kk114@hdm-stuttgart.de'
+license          'All rights reserved'
+description      'this suite installs a jboss server with an jboss management User '
+version          '1.0.0'

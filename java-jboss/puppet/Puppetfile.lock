@@ -1,0 +1,14 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    example42-jboss (2.0.11)
+      example42-puppi (>= 2.0.0)
+    example42-puppi (2.1.11)
+    puppetlabs-java (1.3.0)
+      puppetlabs-stdlib (>= 2.4.0)
+    puppetlabs-stdlib (4.6.0)
+
+DEPENDENCIES
+  example42-jboss (>= 0)
+  puppetlabs-java (>= 0)
+
