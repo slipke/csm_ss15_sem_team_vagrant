@@ -13,8 +13,8 @@ CSM SS15 System Engineering &amp; Management: Team Vagrant
 
 Used software:
 
-* Java (JBoss) (Link to java-jboss)
-* Java (Tomcat) (Link to java-tomcat)
+* Java (JBoss) (https://docs.jboss.org/author/display/AS71/Documentation)
+* Java (Tomcat) (http://tomcat.apache.org/tomcat-6.0-doc/)
 * LAMP (Link to lamp-apache)
 * LNMP (nginx instead of apache) (Link to lamp-nginx)
 
