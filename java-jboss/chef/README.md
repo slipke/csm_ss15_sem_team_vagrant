@@ -15,12 +15,11 @@ HEX( MD5( username ':' realm ':' password))
 
 The credentials can be modified after the installation with the user.sh script. For this use case follow the official [documentation](https://docs.jboss.org/author/display/AS71/add-user+utility) on:
 
+Dependencies
+	* [apt-get](https://supermarket.chef.io/cookbooks/apt)
+	* [java](https://supermarket.chef.io/cookbooks/java)
+	* [jboss](https://supermarket.chef.io/cookbooks/jboss7)
 
-specification
-	- installs apt-get
-	- intalls java
-	- installs jboss7
-	- management user + passwort can be configured over the vagrant file (see configuration)
 
 installation
 	- check out the project
