@@ -12,7 +12,7 @@ The credentials can be modified before the installation in the
 [init.pp file](puppet/modules/comcat-config/manifests/init.pp) file.
 
 
-The credentials can be modified after the installation in the tomcat-users.xml. For this use case follow the official [documentation](http://tomcat.apache.org/tomcat-6.0-doc/manager-howto.html) on:
+The credentials can be modified after the installation in the tomcat-users.xml. For this use case follow the official [documentation](http://tomcat.apache.org/tomcat-6.0-doc/manager-howto.html).
 
 ##Dependencies
 
