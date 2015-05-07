@@ -18,7 +18,7 @@ The credentials can be modified after the installation with the user.sh script. 
 ##Dependencies
 
 ###installed software
-If you use the vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). 
+If you use the vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the github readme of vagrant-berkshelf plugin.
 If you use this cookbook as standalone projekt you have to install chef.
 
 ###cookbooks
