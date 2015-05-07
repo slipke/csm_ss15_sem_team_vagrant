@@ -15,15 +15,23 @@ HEX( MD5( username ':' realm ':' password))
 
 The credentials can be modified after the installation with the user.sh script. For this use case follow the official [documentation](https://docs.jboss.org/author/display/AS71/add-user+utility) on:
 
-Dependencies
+##Dependencies
+
+###installed software
+If you use the vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). 
+If you use this cookbook as standalone projekt you have to install chef.
+
+###cookbooks
 * [apt-get](https://supermarket.chef.io/cookbooks/apt)
 * [java](https://supermarket.chef.io/cookbooks/java)
 * [jboss](https://supermarket.chef.io/cookbooks/jboss7)
 
 
-installation
-	- check out the project
-	- open a terminal / console in this folder
-	- vagrant up
+##Installation
+Check first if you have installed vagrant and virtualbox.  After that check out the project in an user writeable folder.
+Open a terminal / commandline in this folder and just type: vagrant up
 
-Configuration
+##Configuration
+This project configure a management user for the management jboss web interface. The Username is "Administrator" and the password is "changeit!" both without the quote. If you want to change these credentials you have to edit the [default.rb](/attributes/default.rb) file. 
+Keep in  mind, that the password must be insert in the following format:
+HEX( MD5( username ':' realm ':' password))
