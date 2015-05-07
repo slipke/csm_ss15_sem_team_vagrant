@@ -8,6 +8,8 @@ CSM SS15 System Engineering &amp; Management: Team Vagrant
     Simple modules made it easy to setup a basic box. reusable modules for students and small not long lasting projects. just a minimal setup
 * How to use this project? `git clone ...`
 * Install vagrant (Link to vagrant.md)
+** [Github tutorial](https://github.com/mitchellh/vagrant)
+** [offical vagrant documentation](https://docs.vagrantup.com/v2/)
 * Setup chef (Link to chef.md)
 * Setup puppet (Link to puppet.md)
 
