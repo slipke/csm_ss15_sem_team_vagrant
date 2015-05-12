@@ -1,0 +1,13 @@
+{
+  "Gemfile": "dbc1a15e3a264c03878028240cfc5d89",
+  "README.md": "11d40f1239ef3a0797be242e96107f2f",
+  "Rakefile": "20b80e526e351a74df2001f504e756d2",
+  "manifests/config.pp": "79b358ee2e16515c4092d8748a3c0353",
+  "manifests/init.pp": "1031224242a08b7580a827f908b393cc",
+  "manifests/nginx.pp": "2a0adbe95a308ea6f84e6bec00141efd",
+  "metadata.json": "20f0624f796cb4a5823ad92a63883200",
+  "spec/classes/init_spec.rb": "173577e6522af746239c8dacc8d253ec",
+  "spec/spec_helper.rb": "0db89c9a486df193c0e40095422e19dc",
+  "templates/nginx.conf.erb": "9b8ab169335a0a0fc8b85b55f55af2c5",
+  "tests/init.pp": "47ac4d3adb50dc781d40828da2624008"
+}

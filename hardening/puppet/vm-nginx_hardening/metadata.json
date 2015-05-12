@@ -1,0 +1,14 @@
+{
+  "name": "vm-nginx_hardening",
+  "version": "0.1.0",
+  "author": "Steffen Hinderer",
+  "summary": "Installs/update and configures nginx with secure settings and basic optimizations",
+  "license": "Apache 2.0",
+  "source": "",
+  "project_page": null,
+  "issues_url": null,
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+

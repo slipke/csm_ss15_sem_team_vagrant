@@ -1,0 +1,15 @@
+{
+  "name": "mysql_hardening",
+  "version": "0.0.1",
+  "source": "https://github.com/slipke/csm_ss15_sem_team_vagrant/tree/master/hardening/puppet/mysql_hardening",
+  "author": "Steffen Hinderer",
+  "license": "Apache License, Version 2.0",
+  "summary": "Installs/updates and configures MySql with secure settings",
+  "description": "Installs/updates and configures MySql with secure settings",
+  "project_page": "https://github.com/slipke/csm_ss15_sem_team_vagrant/tree/master/hardening/puppet/mysql_hardening",
+  "dependencies": [
+  ],
+  "types": [
+
+  ]
+}
