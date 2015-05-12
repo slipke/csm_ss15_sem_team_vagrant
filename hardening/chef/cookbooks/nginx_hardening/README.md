@@ -1,7 +1,7 @@
 # nginx_hardening - Chef cookbook
 
 ## Description
-This cookbook brings secure nginx settings to your system. It installs/updates the openssl package and provides you with a secure an easy to manage nginx configuration. 
+This cookbook brings secure nginx settings to your system. It installs/updates the openssl and nginx package and provides you with a secure and easy to manage nginx configuration. 
 All changes are made in "/etc/nginx/nginx.conf". Besides the nginx hardening, this cookbook also gives you the option of a very basic, tailored system optimization. 
 Please refer to the section "Attributes" for furhter information. The hardening and install/update recipes are seperate and can be included or excluded at will.
 

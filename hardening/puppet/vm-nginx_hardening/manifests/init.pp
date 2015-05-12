@@ -15,43 +15,47 @@
 # === Parameters
 #
 # [*woker_processes*]
+# Set the numnber of nginx worker processes. A good start is to match the number of CPU cores.
 # options: nginx default "4";  or any integer http://nginx.org/en/docs/ngx_core_module.html#worker_processes
 #
 # [*worker_connections*]
+# Set the number of worker connections.
 # options: nginx default "768", or any integer
 #
 # [*user*]
 # standard nginx user
+# Change the default user, nginx is run under. The specified unix user must exist. Nginx default "www-data". Options `String`
 #
 # [*server_tokens*]
+# Disable the server tokens and don't show OS details on error pages.
 # options: "on", "off"; disable server tokens; don't show OS details
 #
 # [*client_header_buffer_size*]
-# specify the header buffer size; if you handle large cookies or other header data increase the buffer
+# Specifies the header buffer size; If you handle large cookies or other header data, increase the buffer. If this buffer does not suffice the "large_client_header_buffers" will be used. Nginx default "1k". Options: `number of kilobytes as Integer`
 #
 # [*large_client_header_buffers*]
-# specify the max number and size of the client buffer;  if you handle large cookies or other header data increase the buffer
+# Specifies the maximum number and size of the client buffer; If you handle large cookies or other header data increase the buffer. Nginx defaul "4 8k". Options `number of buffers as Integer` and `size of buffer as Integer`
 #
 #
 # further information about HTTP headers https://www.owasp.org/index.php/List_of_useful_HTTP_headers
 #
 # [*x_frame_headers*]
-# options: "DENY", "SAMEORIGIN", "ALLOW-FROMuri"; avoid clickjacking
+# Options: `DENY`, `SAMEORIGIN`, `ALLOW-FROMuri`; 
 #
 # [*x_content_type_options*]
-# options: "nosniff" or leave blank
+# Options: `nosniff` or  `blank`
 #
 # [*x_xss_protection*]
-# options: "1; mode=block", "0", "1"
+# Options: `1; mode=block`, `0`, `1`
 #
 # [*strict_transport_security*]
-# options: "max-age= in seconds", "includeSubdomains", "preload" any combination of those options is possible
+# Options: `max-age= in seconds`, `includeSubdomains`, `preload`; or any combination of those options
 #
 # [*disable_default_site*]
-# options: true, false; remove the default system link from sites-enabled
+# Remove the default system link from sites-enabled. Options: `true`, `false`  
 #
 # [*override_default_site*]
-# options: true, false; override the standard index.html with a blank document 
+# Override the standard index.html with a blank document. Options: `true`, `false`
 #
 class nginx_hardening (
     
