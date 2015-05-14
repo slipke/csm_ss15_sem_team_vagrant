@@ -1,3 +1,6 @@
+TODO -> add apt-get coookbook as dependency for every cookbook
+
+
 # Description 
 This is a collection of common hardening tasks for Ubuntu/Debian Systems written in the Chef Framework. All the cookbooks provide secure and easy to customize configurations. All settings can be changed in the central cookbook configuration file "COOKBOOK/attributes/default.rb". Every cookbook focuses on certain software components and are compatible with each other. 
 They were written for developers who don't want to deal with Linux-Server configuration and still need a secure system up and running within minutes.
