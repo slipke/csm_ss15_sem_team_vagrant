@@ -5,12 +5,23 @@ This chef cookbook consists of two recipes. The First, an easy to use recipe, "u
 The second recipe "server" provides secure ssh server configurations. Both can be used independently.
 
 ## Requirements
-* Chef Server or Client https://www.chef.io (tested with Chef version 12.x)
+    * [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
+    * [Berkshelf](http://berkshelf.com/)
 
 ## Platforms 
     * Debian 8 and later (tested, should work with older versions, too)
     * Ubuntu 14 and later (tested, should work with older versions, too)
 
+## Dependencies
+The [opscode apt cookbook](https://github.com/opscode-cookbooks/apt) makes sure, the apt reposítory list is up to date. 
+Berkshelf is used as a dependency management tool. To resolve and install all the Dependencies cd into the directory and execute following command:
+
+### Berkshelf3
+    * `berks vendor cookbooks`
+
+### Berkshelf 2
+    * `berks install --path cookbooks`    
+    
 ## Attributes
 The file "attributes/default.rb" acts as a central configuration file.
 

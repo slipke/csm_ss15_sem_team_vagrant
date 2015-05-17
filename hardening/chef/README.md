@@ -1,12 +1,27 @@
-TODO -> add apt-get coookbook as dependency for every cookbook
-
-
 # Description 
 This is a collection of common hardening tasks for Ubuntu/Debian Systems written in the Chef Framework. All the cookbooks provide secure and easy to customize configurations. All settings can be changed in the central cookbook configuration file "COOKBOOK/attributes/default.rb". Every cookbook focuses on certain software components and are compatible with each other. 
 They were written for developers who don't want to deal with Linux-Server configuration and still need a secure system up and running within minutes.
-So all the cookbooks don't have any external dependencies, run out of the box in the chef solo mode and can be included in a vagrant script. Even not tested, they should work in the Chef Server Mode, too.
+So all the cookbooks only have one external dependencies, see section "Dependencies". Once resolved they run out of the box in the chef solo mode and can be included in a vagrant script. Even not tested, they should work in the Chef Server Mode, too.
 
 For more details about the cookbooks, please refer to the particular readme files.
+
+## Requirements
+    * [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
+    * [Berkshelf](http://berkshelf.com/)
+
+## Platforms 
+    * Debian 8 and later (tested, should work with older versions, too)
+    * Ubuntu 14 and later (tested, should work with older versions, too)
+
+## Dependencies
+The [opscode apt cookbook](https://github.com/opscode-cookbooks/apt) makes sure, the apt reposítory list is up to date. 
+Berkshelf is used as a dependency management tool. To resolve and install all the dependencies `cd` into the directory and execute following command:
+
+### Berkshelf3
+    * `berks vendor cookbooks`
+
+### Berkshelf 2
+    * `berks install --path cookbooks`
 
 ## Usage
 Hence the cookbooks install and change system configuration files, they must be run with root permissions.

@@ -6,3 +6,4 @@ description      'Installs/Configures nginx_hardening'
 long_description 'Installs/Configures nginx_hardening'
 version          '0.1.0'
 
+depends 'apt'
