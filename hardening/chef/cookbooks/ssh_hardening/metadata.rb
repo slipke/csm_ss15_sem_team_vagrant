@@ -6,5 +6,6 @@ description      'openssh security hardening for debian/ubuntu'
 long_description 'openssh security hardening for debian/ubuntu'
 version          '0.1.0'
 
+depends 'apt'
 #supports "ubuntu"
 #supports "debian"
