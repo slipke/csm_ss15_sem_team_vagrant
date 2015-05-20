@@ -12,7 +12,7 @@
 #
 # Full description of class nginx_hardening::nginx here.
 #
-# makes sure nginx is installed and running
+# makes sure nginx is installed and running and update openssl
 #
 class nginx_hardening::nginx {
     
@@ -24,6 +24,9 @@ class nginx_hardening::nginx {
             ensure => "running"
     }    
         
+    package { openssl:
+            ensure => "latest"
+    }    
    
     
 } 

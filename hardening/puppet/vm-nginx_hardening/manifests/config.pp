@@ -10,8 +10,6 @@
 #
 # == Class: nginx_hardening::config
 #
-# Full description of class nginx_hardening::config here.
-#
 # Takes the parameters and populates the nginx.conf.erb file.
 # Once populated it is written to the host system and nginx gets restarted
 #

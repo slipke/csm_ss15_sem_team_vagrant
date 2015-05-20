@@ -18,5 +18,7 @@
 # limitations under the License.
 #
 
+include_recipe "apt"
+
 include_recipe "nginx_hardening::check_nginx"
 include_recipe "nginx_hardening::nginx_hardening"

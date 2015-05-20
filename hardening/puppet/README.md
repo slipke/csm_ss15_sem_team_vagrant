@@ -1,23 +1,32 @@
 TODO this is copy n pasted
 
 # Description 
-This is a collection of common hardening tasks for Ubuntu/Debian Systems written in the Chef Framework. All the cookbooks provide secure and easy to customize configurations. All settings can be changed in the central cookbook configuration file "COOKBOOK/attributes/default.rb". Every cookbook focuses on certain software components and are compatible with each other. 
+This is a collection of common hardening tasks for Ubuntu/Debian Systems written in the Puppet Framework. All the modules provide secure and easy to customize configurations. All settings can be passed in the module as parameters. Every module focuses on certain software components and are compatible with each other. 
 They were written for developers who don't want to deal with Linux-Server configuration and still need a secure system up and running within minutes.
-So all the cookbooks don't have any external dependencies, run out of the box in the chef solo mode and can be included in a vagrant script. Even not tested, they should work in the Chef Server Mode, too.
+So all the modules don't have any external dependencies, run out of the box in the standalone mode and can be included in a vagrant script. Even not tested, they should work in the Puppet Server Mode, too.
 
 For more details about the cookbooks, please refer to the particular readme files.
 
 ## Usage
-Hence the cookbooks install and change system configuration files, they must be run with root permissions.
+Hence the modules install and change system configuration files, they must be run with root permissions.
 
-Local Mode with Chef Client:
+build the modules and install them:
 
-    * `sudo chef-client --local-mode --runlist 'recipe[COOKBOOK]'`
+    * `sudo puppet build /path/toSource`
+    * `sudo puppet install path/to/Source/pkg/modulename.tar.gz
     
-Vagrant:
-    * TODO
+create a puppet script file like the following template:
+
+    * `node default {
+        class { 'installedModuleName' :
+            parameter1 => "Content" 
+        }
+    }
     
-    
+run the puppet script with:    
+
+    * `sudo puppet apply /path/toScript'`
+        
 ## Contributors
 * Steffen Hinderer
 
