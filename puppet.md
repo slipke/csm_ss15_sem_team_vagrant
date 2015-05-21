@@ -119,19 +119,85 @@ type {'title':
 
 ## Classes
 
-## Nodes
+Classes are bigger named blocks of Puppet code which are only executed when they're called. They are stored in modules and can be added by declaring them.
 
-## Ordering
+```
+# A class with parameters
+class apache (String $version = 'latest') {
+    package {'httpd':
+        ensure => $version, # Using the class parameter from above
+        before => File['/etc/httpd.conf'],
+    }
+    file {'/etc/httpd.conf':
+        ensure  => file,
+        owner   => 'httpd',
+        content => template('apache/httpd.conf.erb'), # Template from a module
+    }
+    service {'httpd':
+        ensure    => running,
+        enable    => true,
+        subscribe => File['/etc/httpd.conf'],
+    }
+}
+```
+
+A class consists of the `class` keyword, the name of the class, an optional parameter list and a block of Puppet code.
+
+A class can be used by declaring it, which is possible in two ways:
+
+- By using `include`, `require`, `contain` or `hiera_include`, which is called 'include-like behaviour'
+- By declaring them like a resource, which is called 'resource-like behaviour'
+
+
+## Node definitions
+
+Node definitions contain code, which is only executed on one specific node.
+
+```
+# puppet/manifests/site.pp
+node 'www1.example.com' {
+    include common
+    include apache
+    include squid
+}
+node 'db1.example.com' {
+    include common
+    include mysql
+}
+```
 
 # Modules
 
-http://docs.puppetlabs.com/puppet/3.7/reference/modules_fundamentals.html
+[Modules](http://docs.puppetlabs.com/puppet/4.1/reference/modules_fundamentals.html) are bundles of code and data. Every manifest file should be placed in a module, except the `main manifest`.
 
-## Where to get modules from?
+## Folder Structure
 
-- Puppet forge
-- Git clone
-- librarian-puppet
+A [module](http://docs.puppetlabs.com/puppet/4.1/reference/modules_fundamentals.html) has the following directory structure:
+
+- `my_module`
+    - `manifests`
+        - `init.pp` This file contains a class definition, which must be named after the module name.
+        - `other_class.pp` Contains a class which is named `my_module::other_class`
+        - `some_folder`
+            - `foo.pp` Contains a class named `my_module::some_folder::foo`
+    - `files` This folder contains static files needed by the nodes
+        - `service.conf` This file's `source =>` would be `puppet:///modules/my_module/service.conf`, its content can be accessed by the `file` function (`content => file('my_module/service.conf')`)
+    - `templates` This folder contains [templates](http://docs.puppetlabs.com/guides/templating.html) which can be used by the manifests
+        - `component.erb` A template file which can be used by calling `template('my_module/component.erb')`
+        - `component.epp` A template file which can be used by calling `epp('my_module/component.epp')`
+    - `lib` This folder contains additional plugins
+    - `facts.d` This folder contains [external facts](http://docs.puppetlabs.com/facter/latest/custom_facts.html#external-facts)
+    - `examples` This folder contains examples on how the module should be used
+        - `init.pp` 
+    - `spec` Contains spec tests for any plugins in the lib directory
+    
+## How to use modules?
+
+Modules can be found on multiple sources, the official repository from Puppetlabs is [Puppet Forge](https://forge.puppetlabs.com). Another source is [GitHub](https://github.com), where
+different authors offer open soruce modules. A popular repository on GitHub is [Example42](https://github.com/example42).
+
+Modules can either be downloaded manually (see [Option 3](#(Option 3) Download modules manually), or automatically by either using a dependency manager like `librarian-puppet` (see [Option 2](#(Option 1) Install librarian-puppet to manage modules)), or cloning 
+from a GitHub repository (see [Option 2](#(Option 2) Use git submodules to manage modules))
 
 # Deprecation
 
