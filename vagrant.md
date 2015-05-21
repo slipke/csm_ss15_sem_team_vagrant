@@ -1,15 +1,19 @@
-How to use vagrant?
+#Vagrant -  in terms of this project
 
 @@@ WIP @@@
 
-Setup vagrant
-Install plugins for chef
-Install plugins for puppet
+##vagrant installation
+vagrant is available for Windows, Linux and Mac. You can download your package [here](https://www.vagrantup.com/downloads.html). Our projects are tested with virtualbox, so we recommend to use virtualbox as virtualisation software. However the projects should work also with the other supported software mentioned by vagrant. 
+###plugin's dependent on which provisioning kind you want to use
+####chef
+If you use a chef project you have to install the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf).
+
+####puppet
+If you use a puppet project you have to install the [librarian-puppet](https://github.com/rodjek/librarian-puppet). This requieres additional the installation of [puppet](https://docs.puppetlabs.com/guides/install_puppet/pre_install.html#next-install-puppet) and ruby.
 
 
 
-
-#vagrant
+##vagrant introduction and configuration
 Vagrant is a tool, which allows the setup of virtual maschines defined by code. Vagrant will be installed on the used OS and need a virtualisation software like [virtualbox](https://www.virtualbox.org/), [Windows Hyper-V](http://windows.microsoft.com/de-de/windows-8/hyper-v-run-virtual-machines), [Docker](https://www.docker.com/) or [VMWare](http://www.vmware.com/de). The plain instalation of vagrant contains the support for virtualbox, the other virtualisation software can be supported with [provider-plugin's](https://docs.vagrantup.com/v2/providers/index.html). The entry point for vagrant is the [Vagrantfile](https://docs.vagrantup.com/v2/vagrantfile/index.html). In this file, there will be done all definitions for the guest maschine. The syntax for this file is ruby. For example there is a small definition file which defines the kind, a ip adress and how the maschines network interface is mapped to the host and a host name for the maschine.
 ```ruby
 Vagrant.configure(2) do |config|
@@ -19,7 +23,7 @@ Vagrant.configure(2) do |config|
 end
 ```
 The secound line defines the kind of the maschine. This can be a Linux or a Windows image. If you don't give a destiniation where vagrant should search for the maschine, it looks up at [atlas](https://atlas.hashicorp.com/boxes/search). On this site, there are many more boxes which can be used for free. When you now [start](#usefull-Commands) the virtualmaschine, it will only start the plain os image specified by the ```config.vm.box``` parameter. For the most use cases, we need now a possibility to change or add software to the plain os. This possibility is called provision and can be done in many ways. 
-####provision possibilities
+###provision possibilities
 Vagrant enabled many ways to provision the guest maschine. There are possibilities for basic provision with [shell](https://docs.vagrantup.com/v2/provisioning/shell.html) or [File](https://docs.vagrantup.com/v2/provisioning/file.html) commands, but there are many more powerfull ways. So you can use [ansible](https://docs.vagrantup.com/v2/provisioning/ansible.html), [salt](https://docs.vagrantup.com/v2/provisioning/salt.html), [chef](https://docs.vagrantup.com/v2/provisioning/chef_solo.html) or [puppet](https://docs.vagrantup.com/v2/provisioning/puppet_apply.html). For this project we only use **chef** and **puppet**. 
 ##vagrant configuration for chef
 This section describes only the assumptions and configuration points of vagrant for provisioning with chef. The tried the approach for using [roles]() from chef. This leads to the following vagrant configuration.
