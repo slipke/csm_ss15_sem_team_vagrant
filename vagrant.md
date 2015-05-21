@@ -2,6 +2,7 @@
 
 @@@ WIP @@@
 
+
 ##vagrant installation
 vagrant is available for Windows, Linux and Mac. You can download your package [here](https://www.vagrantup.com/downloads.html). Our projects are tested with virtualbox, so we recommend to use virtualbox as virtualisation software. However the projects should work also with the other supported software mentioned by vagrant. 
 ###plugin's dependent on which provisioning kind you want to use
@@ -65,8 +66,17 @@ This implies the following folder structure.
 ```
 
 ##usefull-vagrant-commands
+These commands can be used in your shell or command line interface. Just open such a shell in your folder, where you vagrantfile is located and type in the following commands:
+
 * ```vagrant init``` creates a new vagrantfile (usefull when you want to create your own maschine)
-* ```vagrant up``` starts the virtual maschine with the configuration done in the Vagrantfile, also the provisioning
+* ```vagrant up``` starts the virtual maschine with the configuration done in the Vagrantfile, also the provisioning is done. The Vagrantfile will be searched in the current folder, as well as all parent folders. A short example should explain this. This is the current path where the shell is started:  ```/home/max/documents/testproject ``` and on all these paths will be searched ( the order of the lookup is as shown)
+```
+/home/max/documents/testproject/vagrantfile
+/home/max/documents/vagrantfile
+/home/max/vagrantfile
+/home/vagrantfile
+/vagrantfile
+```
 * ```vagrant provison``` runs the provision commands, defined in the vagrant file on a already running maschine.
 * ```vagrant provision --provision-with shell``` runs only the shell provision commands, this can also be done with all other provision possibilities.
 * ```vagrant ssh``` login on the guest maschine with ssh, if this doesn't work, you start a shell and type ```ssh -p 2222 vagrant@localhost``` with the userpasswort ```vagrant```. If you use windows and have git installed, just right click and open ```Git Bash```. Now you can use the ssh command. When you run more than one guest maschine on your system, check which port you have to use, for login on your target maschine. You can find the port in the output  ```default: SSH address: 127.0.0.1:[HereYourPort]```
