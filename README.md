@@ -10,7 +10,10 @@ Simple modules made it easy to setup a basic box. reusable modules for students 
 `git clone ...`
 
 ##Install vagrant (Link to vagrant.md)
-* [Github tutorial](https://github.com/mitchellh/vagrant)
+* [Project specific documentation](./vagrant.md)
+
+There are some more links which may help you troubleshooting your problems or getting more information about the vagrant technology.
+* [external tutorial](https://github.com/mitchellh/vagrant)
 * [offical vagrant documentation](https://docs.vagrantup.com/v2/)
     
 ##Setup chef (Link to chef.md)
