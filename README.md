@@ -8,6 +8,8 @@ It is intended for people who cant use a chef server or dont want or its not wor
 Simple modules made it easy to setup a basic box. reusable modules for students and small not long lasting projects. just a minimal setup
 ##How to use this project?
 `git clone ...`
+###which provision project should be used?
+describe here our conclusion about the usage factors of puppet and chef. Which provision technology should be used for which use case / knowledge base?
 
 ##Install vagrant (Link to vagrant.md)
 * [Project specific documentation](./vagrant.md)
