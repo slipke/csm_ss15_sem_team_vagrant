@@ -1,4 +1,4 @@
-# csm_ss15_sem_team_vagrant
+# DevOps HdM
 CSM SS15 System Engineering &amp; Management: Team Vagrant
 
 @@@ WIP @@@
@@ -12,7 +12,7 @@ Simple modules made it easy to setup a basic box. reusable modules for students 
 describe here our conclusion about the usage factors of puppet and chef. Which provision technology should be used for which use case / knowledge base?
 
 ##Install vagrant (Link to vagrant.md)
-* [Project specific documentation](./vagrant.md)
+* [Project specific installation documentation](./vagrant.md)
 
 There are some more links which may help you troubleshooting your problems or getting more information about the vagrant technology.
 * [external tutorial](https://github.com/mitchellh/vagrant)
@@ -23,8 +23,8 @@ There are some more links which may help you troubleshooting your problems or ge
 
 ##Used software
 
-* Java (JBoss) (https://docs.jboss.org/author/display/AS71/Documentation)
-* Java (Tomcat) (http://tomcat.apache.org/tomcat-6.0-doc/)
+* Java [JBoss](https://docs.jboss.org/author/display/AS71/Documentation)
+* Java [Tomcat](http://tomcat.apache.org/tomcat-6.0-doc/)
 * LAMP (Link to lamp-apache)
 * LNMP (nginx instead of apache) (Link to lamp-nginx)
 
@@ -35,8 +35,7 @@ There are some more links which may help you troubleshooting your problems or ge
 
 ##How to use librarian-puppet on windows
 
-For the usage of librarian-puppet you have to install Ruby on your Windows machine.
-http://rubyinstaller.org/downloads/
+For the usage of librarian-puppet you have to install [Ruby](http://rubyinstaller.org/downloads/) on your Windows machine.
 The librarian-puppet package needs also a puppet installation on the machine. This is also required, when you just want to download the puppet modules and install them on a guest system like a vagrant machine. It is possible that you will get SSL Authentication Errors when you start "librarian-puppet install". This is caused by non existent certificates. One fast workaround is to start your computer management and add a new envirment variable called "SSL_CERT_FILE" with the value of CHEFDK-HOME\embedded\ssl\certs\cacert.pem or download the file http://curl.haxx.se/ca/cacert.pem and point your path variable to this file.
 
 ##Introduction of used software
