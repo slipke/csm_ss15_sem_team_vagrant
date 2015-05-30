@@ -9,11 +9,11 @@ ruby DSL (domain-specific language). Puppet exists in two versions: Open Source 
 
 ## Open Source Puppet
 
-Open Source Puppet is the basic for Puppet Enterprise as described in "What is Puppet?"
+Open Source Puppet is the basic for Puppet Enterprise as described in ["What is Puppet?"](#what-is-puppet)
 
 ## Puppet Enterprise
 
-Puppet Enterprise extends the basic Open Source Puppet by Apps to make management and distribution of enterprise infrastructure easier. Some apps are i.e. used to
+Puppet Enterprise extends the basic Open Source Puppet by apps to make management and distribution of enterprise infrastructure easier. Some apps are i.e. used to
 monitor, track, distribute and manage nodes.
 
 # Setup Open Source Puppet
@@ -23,10 +23,7 @@ you need a tool like [Vagrant](https://www.vagrantup.com) to manage your virtual
 
 ## Setup a local project
 
-- Create puppet folder
-- Create puppet/manifest folder
-- Create puppet/manifest/default.pp
-- Create puppet/modules folder
+@@@ TODO @@@
 
 ### (Option 1) Install librarian-puppet to manage modules
 
@@ -38,11 +35,11 @@ you need a tool like [Vagrant](https://www.vagrantup.com) to manage your virtual
 ### (Option 2) Use git submodules to manage modules
 
 - Install [git](https://git-scm.com)
-- Add a submodule with the command `git submodule add [repository-url] puppet/modules/[module-name]`
+- Add a submodule with the command `git submodule add <repository-url> puppet/modules/<module-name>`
 
 ### (Option 3) Download modules manually
 
-You can also manually download any module, i.e. from [Puppet forge](https://forge.puppetlabs.com)
+You can also manually download any module, i.e. from [Puppet forge](https://forge.puppetlabs.com).
 
 # Architecture
 
@@ -51,23 +48,25 @@ You can also manually download any module, i.e. from [Puppet forge](https://forg
 Puppet typically runs in a master/slave architecture, where the master server holds the configurations, which can requested by the slaves (nodes).
 The nodes require the _Puppet Agent_ application to be installed, which typically runs in the background. 
 The servers need the [_Puppet Server_](http://docs.puppetlabs.com/puppetserver/1.0/index.html) application, typically managed by a web-server as a rack application.
-After a given time every node syncs with the puppet master server by sending facts, which expects a compiled catalog as response.
+After a given time every node syncs with the puppet master server by sending facts, and expects a compiled catalog as response.
 
 ## Puppet Apply
 
-Puppet can also run in a standalone version, which is called _Puppet Apply_. _Puppet Apply_ periodically compiles the catalog (via i.e. a cron-job) and checks the current system for changes, and if needed applies
-them.
+Puppet can also run in a standalone version, which is called _Puppet Apply_. _Puppet Apply_ periodically compiles the catalog (via i.e. a cron-job) and checks the current 
+system for changes, and if needed applies them.
 
 ## Differences between agent/master &amp; puppet apply
 
 - In puppet apply every node has access to the full knowledge
 - Agent / master handles all reports centrally
-- In puppet apply every node needs to be synced if a change was made, in agent/master only the master server needs to be updated
+- In puppet apply every node needs to be synced if a change on the manifests was made, in agent/master only the master server needs to be updated
 - Puppet apply needs more resources (since all nodes have to compile their own catalog)
 - Master/Slave need a big master server (lots of RAM and CPU) with a fast disk
 - Agents need good network to reach master servers
 
 ## Compiling a catalog
+
+@@@ WIP @@@
 
 1. Retrieve the node object
 2. Set Variables from the Node Object, from Facts, and from the Certificate
@@ -79,17 +78,17 @@ them.
 
 ## Catalog
 
-A catalog describes a system state for a single node. It is compiled by the master server and requested by sending the facts to the master.
+A catalog describes a system state for a single node. It is compiled by the master server and requested by a node by sending the facts to the master.
 It lists all resources and dependencies which need to be managed in a certain order.
 
 ## Files
 
-Puppet files are called manifests and always end on _.pp_. They must be:
+Puppet files are called manifests and always end on _.pp_. They:
 
-- UTF-8 encoded
+- Must be UTF-8 encoded
 - May use Unix (LF) or Windows (CRLF) line breaks
 
-Puppet always starts compiling with the _main manifest_ file.
+Puppet always starts compiling with the [_main manifest_](https://docs.puppetlabs.com/puppet/latest/reference/dirs_manifest.html) file.
 
 ## Resources
 
@@ -196,8 +195,8 @@ A [module](http://docs.puppetlabs.com/puppet/4.1/reference/modules_fundamentals.
 Modules can be found on multiple sources, the official repository from Puppetlabs is [Puppet Forge](https://forge.puppetlabs.com). Another source is [GitHub](https://github.com), where
 different authors offer open soruce modules. A popular repository on GitHub is [Example42](https://github.com/example42).
 
-Modules can either be downloaded manually (see [Option 3](#(Option 3) Download modules manually), or automatically by either using a dependency manager like `librarian-puppet` (see [Option 2](#(Option 1) Install librarian-puppet to manage modules)), or cloning 
-from a GitHub repository (see [Option 2](#(Option 2) Use git submodules to manage modules))
+Modules can either be downloaded manually (see [Option 3](#option-3-download-modules-manually), or automatically by either using a dependency manager like `librarian-puppet` (see [Option 2](#option-1-install-librarian-puppet-to-manage-modules)), or cloning 
+from a GitHub repository (see [Option 2](#option-2-use-git-submodules-to-manage-modules))
 
 # Deprecation
 
@@ -217,14 +216,13 @@ http://docs.puppetlabs.com/puppet/3.7/reference/experiments_future.html
 
 # Resources
 
-https://docs.puppetlabs.com/puppet_core_types_cheatsheet.pdf
-https://docs.puppetlabs.com/module_cheat_sheet.pdf
-
-Resources:
-http://docs.puppetlabs.com/learning/index.html
-Modules: https://github.com/puppetlabs/
-Modules: https://github.com/example42/puppet-modules
+- [Core types cheat sheet](https://docs.puppetlabs.com/puppet_core_types_cheatsheet.pdf) 
+- [Module cheat sheet](https://docs.puppetlabs.com/module_cheat_sheet.pdf)
+- [Learning Puppet](http://docs.puppetlabs.com/learning/index.html)
+- [Modules from Puppetlabs on GitHub](https://github.com/puppetlabs/)
+- [Modules from Example42 on GitHub](https://github.com/example42/puppet-modules)
+- [Puppet Forge](https://forge.puppetlabs.com)
 
 # Sources
 
-puppetlabs.com
+- [Puppetlabs](puppetlabs.com)
