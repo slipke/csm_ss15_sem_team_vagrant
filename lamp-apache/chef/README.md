@@ -1,5 +1,4 @@
-# csm_ss15_sem_team_vagrant
-CSM SS15 System Engineering &amp; Management: Team Vagrant
+# Installing a LAMP-Stack using Chef
 
 This project installs and configures a simple lamp-stack with apache2, mysql and php5 on a Ubuntu 14.04 Server. 
 The credentials for the mysql-user can be configured in the [default.rb](https://github.com/slipke/csm_ss15_sem_team_vagrant/blob/master/lamp-apache/chef/project_cookbooks/lampp/recipes/default.rb) file.
