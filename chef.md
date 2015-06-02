@@ -1,3 +1,43 @@
-How to generally use chef?
 
+
+#What is Chef?
+
+Chef is a tool for automatic system configuration and management. Users can write "recipes" in a Ruby-DSL to describe how the final system should look like. These recipes can be written on lots of platforms regardless of the target's system operating system. Since v11 the core api is completely written in Erlang. 
+
+#Get Chef up an running
+
+##Get Chef
+To use Chef, it is recommended to use the Chef Development Kit, where all neccessary tools are already bundled.
+You can get it from [here](https://downloads.chef.io/chef-dk/). Download the version coresponding to the Platform you want to develop your recipes.
+##Use Chef
+As Chef is a command-line tool, basic knowledge of terminal commands is recommended but aside from `mkdir`, `cd` and creating files there's not much you have to do via the command-line. 
+
+#Chef terminology
+
+##Resources
+In Chef a resource desribes some piece of infrastructure, like a file, a template or a package.
+The simplest kind of a resource is a single file. The resources describe what the system should look like but not how to get there.
+
+##Recipe
+A recipe is a collection of resources that describe a particular configuraton. A recipes contains all important information about how to configure a part of the system, e.g. which files should be created or which packages should be installed.
+
+##Cookbook
+In a cookbook, recipes are grouped together to make them more manageable and maintainable than just single recipes.
+
+#Architecture
+
+##Workstation
 @@@ WIP @@@
+
+##Server
+@@@ WIP @@@
+
+##Node
+@@@ WIP @@@
+
+##Chef-Solo
+@@@ WIP @@@
+
+##Directory Structure
+@@@ WIP @@@
+
