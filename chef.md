@@ -27,17 +27,32 @@ In a cookbook, recipes are grouped together to make them more manageable and mai
 #Architecture
 
 ##Workstation
+The workstation is the computer you use everyday. From this machine you can create, edit and manage your cookbooks and recipes. The platform of your workstation can be any OS with Chef being available. That means you can manage a Ubuntu Server from your Windows workstation.
 @@@ WIP @@@
 
 ##Server
+The Chef Server hosts your cookbooks to make them available for multiple clients. It is basically your main repository for cookbooks.
 @@@ WIP @@@
 
 ##Node
+Any computer managed by the Chef Server is considered a node. Chef client needs to be installed on this computers but that is the only requirement to configure these machines.
 @@@ WIP @@@
 
 ##Chef-Solo
+Chef-solo is an open source implementation of the Chef-client. With Chef-solo you can manage a single node without having to access the Chef Server. It requires the cookbooks an dependencies to be on the same physikal disk as the node. It is very useful if you want to manage just a single computer for special tasks.
 @@@ WIP @@@
 
 ##Directory Structure
+  - `chef-repo`
+    - `certificates`
+    - `config`
+    - `cookbooks`
+    - `data_bags`
+    - `environments`
+    - `roles`
+  
+@@@ WIP @@@
+
+##Librarian-chef/Berkshelf
 @@@ WIP @@@
 
