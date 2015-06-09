@@ -10,8 +10,9 @@ If you only want to quickly setup a lamp stack just download  [vagrant](https://
 
 ###cookbooks
 * [apt-get](https://supermarket.chef.io/cookbooks/apt)
-* [java](https://supermarket.chef.io/cookbooks/java)
-* [jboss](https://supermarket.chef.io/cookbooks/jboss7)
+* [mysql](https://supermarket.chef.io/cookbooks/mysql)
+* [apache](https://supermarket.chef.io/cookbooks/apache2)
+* [php](https://supermarket.chef.io/cookbooks/php)
 
 
 ##Installation
