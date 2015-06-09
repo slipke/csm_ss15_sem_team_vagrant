@@ -1,0 +1,9 @@
+source "https://supermarket.chef.io"
+
+metadata
+
+cookbook 'mysql', '~> 6.0.22'
+cookbook 'nginx', '~> 2.7.6'
+cookbook 'php', '~> 1.5.0'
+cookbook 'apt', '~> 2.7.0'
+cookbook 'lampp', path: './project_cookbooks/lampp/'
