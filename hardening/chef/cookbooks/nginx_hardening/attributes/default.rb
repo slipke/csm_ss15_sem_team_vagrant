@@ -34,5 +34,5 @@ default['nginx']['X_XSS_Protection'] 			= ['"1; mode=block"']  # options: "1; mo
 default['nginx']['Strict_Transport_Security'] 		= ['"max-age=31536000; includeSubdomains; preload"'] # options: "max-age= in seconds", "includeSubdomains", "preload" any combination of those options is possible
                                                            
 # misc
-default['nginx']['disable_default_site']		= 'true' # options: true, false; remove the default system link from sites-enabled 	                                                    
-default['nginx']['override_default_site']		= 'true' # options: true, false; override the standard index.html with a blank document 	          
+default['nginx']['disable_default_site']		= 'false' # options: true, false; remove the default system link from sites-enabled 	                                                    
+default['nginx']['override_default_site']		= 'false' # options: true, false; override the standard index.html with a blank document 	          
