@@ -5,7 +5,7 @@ The credentials for the mysql-user can be configured in the [default.rb](https:/
 
 ##Dependencies
 
-###installed software
+###Installed software
 If you only want to quickly setup a lamp stack just download  [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the github readme of vagrant-berkshelf plugin.
 
 ###cookbooks
@@ -16,4 +16,9 @@ If you only want to quickly setup a lamp stack just download  [vagrant](https://
 
 
 ##Installation
+
+###Installation with vagrant
 Check first if you have installed vagrant and virtualbox.  After that just run `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` an navigate to /lamp-apache/chef and run `vagrant up` from your terminal
+
+###Installation with Chef
+@@@WIP@@@
