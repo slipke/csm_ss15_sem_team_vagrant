@@ -13,52 +13,49 @@ The hardening and install/update modules are seperate and can be included or exc
     * Ubuntu 14 and later (tested, should work with older versions, too)
     
 # Parameters
-[*change_mysql_pw*]
-change the password for the mysql root user. Options: `true`, `false` 
+* `[*change_mysql_pw*]` - change the password for the mysql root user. Options: `true`, `false` 
 
-[*mysql_root_pw*]
-Password for the mysql root user. If you install mysql through this script the root password will be blank. Options: `String`; default: blank
+* `[*mysql_root_pw*]` - Password for the mysql root user. If you install mysql through this script the root password will be blank. Options: `String`; default: blank
 
-[*new_mysql_root_pw*]
-the new password for the mysql root user. Options: `String`
+* `[*new_mysql_root_pw*]` - the new password for the mysql root user. Options: `String`
 
-[*remove_anonymous_user*]
-the MySql default settings allow anonymous users (black user name) to connect to the database, true will remove this behavior. Options: `true`, `false`  
+* `[*remove_anonymous_user*]` - the MySql default settings allow anonymous users (black user name) to connect to the database, true will remove this behavior. Options: `true`, `false`  
 
-[*deactivate_remote_host*]
-dissallow remote root login. Root login will only be possible from localhost. Options: `true`, `false` 
+* `[*deactivate_remote_host*]` - dissallow remote root login. Root login will only be possible from localhost. Options: `true`, `false` 
 
-[*delete_demo_database*]
-This option removes the default test database, which every user can access. Options: `true`, `false` 
-
+* `[*delete_demo_database*]` - This option removes the default test database, which every user can access. Options: `true`, `false` 
 
 
 # Usage 
 Since this module installs and changes system configuration files, it must be run with root privileges.
 
-Before you can use this module you must build it. For building it, cd into the parent directory and execute following command:
+The following stept show you the process with terminal commands
+
+### 1. Build the module:
 
     * `puppet module build yourPath/toThe/module`
     
 Once the module is built, puppet created a compressed file in `/vm-nginx_hardening/pkg/mysql_hardening.-0.1.0tar.gz`. 
-Now install the compressed file with:
+
+### 2. Install the the module:
 
     * `puppet module install path/to/mysql_hardening.-0.1.0tar.gz`
 
-Ńow the module is installed on your machine and you can use the class:
+### 3. Ńow the module is installed on your machine and you can use the class:
+
 
     * `class { 'mysql_hardening': }
     
-Custom attributes can be passed into the module like this:
+### 4. Custom attributes can be passed into the module like this:
     
-  * `class{ 'nginx_hardening': 
+* `class{ 'nginx_hardening': 
                 change_mysql_pw => true,     
         }`
-        
+
 ## FAQ
 If you don't want to update mysql-server, run the following command instead:
 
-    * `class { 'mysql_hardening::hardening': }
+    * `class { 'mysql_hardening::hardening': }`
 
 ## Contributors
 * Steffen Hinderer

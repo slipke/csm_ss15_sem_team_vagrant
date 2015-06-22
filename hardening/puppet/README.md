@@ -1,5 +1,3 @@
-TODO this is copy n pasted
-
 # Description 
 This is a collection of common hardening tasks for Ubuntu/Debian Systems written in the Puppet Framework. All the modules provide secure and easy to customize configurations. All settings can be passed in the module as parameters. Every module focuses on certain software components and are compatible with each other. 
 They were written for developers who don't want to deal with Linux-Server configuration and still need a secure system up and running within minutes.
@@ -7,23 +5,35 @@ So all the modules don't have any external dependencies, run out of the box in t
 
 For more details about the cookbooks, please refer to the particular readme files.
 
+
+## Requirements
+    * [Puppet 3.x][https://puppetlabs.com/puppet/puppet-open-source]
+
+## Platforms
+    * Debian 8 and later (tested, should work with older versions, too)
+    * Ubuntu 14 and later (tested, should work with older versions, too)
+
 ## Usage
 Hence the modules install and change system configuration files, they must be run with root permissions.
 
-build the modules and install them:
+### 1. Build the module:
 
-    * `sudo puppet build /path/toSource`
-    * `sudo puppet install path/to/Source/pkg/modulename.tar.gz
-    
-create a puppet script file like the following template:
+* `sudo puppet build /path/toSource`
+
+### 2. Install the the module:
+
+* `sudo puppet install path/to/Source/pkg/modulename.tar.gz`
+
+ 
+### 3. Create a puppet script file like the following template:
 
     * `node default {
         class { 'installedModuleName' :
             parameter1 => "Content" 
         }
-    }
+    }`
     
-run the puppet script with:    
+### 4, Run the puppet script with:    
 
     * `sudo puppet apply /path/toScript'`
         

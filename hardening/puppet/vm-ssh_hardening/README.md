@@ -5,9 +5,9 @@ This module provides you with secure openssh settings. Besides that, you can man
 All the manifests work individually aswell.
 
 ## Requirements
-* Puppet
+    * [Puppet 3.x][https://puppetlabs.com/puppet/puppet-open-source]
 
-## Platforms 
+## Platforms
     * Debian 8 and later (tested, should work with older versions, too)
     * Ubuntu 14 and later (tested, should work with older versions, too)
 
@@ -15,43 +15,37 @@ All the manifests work individually aswell.
 All the settings are passed in as Parameters.
 
 ## SSH-Settings
-[*port*]
-Changes the port SSH is listening to. Options: `Integer`, default `22`.
+* `[*port*]` - Changes the port SSH is listening to. Options: `Integer`, default `22`.
 
-[*password_auth*]
-Dissallow login with a password. Options: `yes`, `no`
+* `[*password_auth*]` - Dissallow login with a password. Options: `yes`, `no`
 
-[*permit_root_login*]
-Allow remote root login. Options: `yes`, `no`
-Please add a a user you can login with to the sudo group
+* `[*permit_root_login*]` - Allow remote root login. Options: `yes`, `no`. Please add a a user you can login with to the sudo group
 
 ## Usermanagement
-[*users*]
-This parameter creates new users. You can pass all the User information as a hash. The structure is following:
+* `[*users*]` - This parameter creates new users. You can pass all the User information as a hash. The structure is following:
 
-users => {
+`users => {
     'nameOfUser' => {
         groups => ['yourGroup1', 'yourGroup2'], # Options: `String`;  Users groups, please add your user to the sudo group if you dissallow root login ! Don't add the standard group (the name of the user)
         password => 'passwordCryptHashed', # Options: `String`; The password, hasehd as with crypt or openssl function
         managehome => boolean, # Options: `boolean`; Should a home directory be created
         system => boolean # Options: `boolean`; Is it a system user? don't set managehome if true
         }
-}
+}`
 
 You can extend this list with multiple users. Just comma seperate the list.
 
 ## Keymanagement
-[*keys*]
-You can pass ssh keys for exisiting and through this script created users. This is important to do, if you deactivate password_auth. 
+* `[*keys*]` - You can pass ssh keys for exisiting and through this script created users. This is important to do, if you deactivate password_auth. 
 Pass the keys as an hash with the following structure:
 
-keys => {
+`keys => {
         'nameOfUser' => { # Options: `String`; The user you want to add the key for
             user => 'nameOfUser', # Optins `String`; The user you want to add the key for
             key => 'yourPublicKey', # Options `String`; Valid values are ssh-dss (also called dsa), ssh-rsa (also called rsa), ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521, ssh-ed25519 (also called ed25519).
             type => ssh-dss, # The type of the key: Valid values are ssh-dss (also called dsa), ssh-rsa (also called rsa), ecdsa-sha2-nistp256, ecdsa-sha2-nistp384, ecdsa-sha2-nistp521, ssh-ed25519 (also called ed25519).
         }
-}  
+}`
 
 
 ## Usage
@@ -66,21 +60,21 @@ Now install the compressed file with:
 
     * `puppet module install path/to/vm-ssh_hardening.-0.1.0tar.gz`
 
-Ńow the module is installed on your machine and you can use the class:
+Now the module is installed on your machine and you can use the class:
 
-    * `class { 'ssh_hardening': }
+    * `class { 'ssh_hardening': }`
     
 Custom attributes can be passed into the module like this:
     
   * `class{ 'nginx_hardening': 
                 port => "6500",     
-        }
+        }`
 
 
 ## FAQ
 If you want to exclude certain classes, please call the classes you need manually like this:
 
-`class { 'ssh_hardening::ClassName': }
+`class { 'ssh_hardening::ClassName': }`
 
 
 ## Contributors

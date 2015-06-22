@@ -6,55 +6,39 @@ All changes are made in "/etc/nginx/nginx.conf". Besides the nginx hardening, th
 Please refer to the section "Attributes" for furhter information. The hardening and install/update recipes are seperate and can be included or excluded at will.
 
 ## Requirements
-* Puppet
+    * [Puppet 3.x][https://puppetlabs.com/puppet/puppet-open-source]
 
-## Platforms 
+## Platforms
     * Debian 8 and later (tested, should work with older versions, too)
     * Ubuntu 14 and later (tested, should work with older versions, too)
     
 # Parameters
-[*woker_processes*]
-Set the numnber of nginx worker processes. A good start is to match the number of CPU cores.
-options: nginx default `"4"`;  or any `integer` http://nginx.org/en/docs/ngx_core_module.html#worker_processes
+* `[*woker_processes*]` - Set the numnber of nginx worker processes. A good start is to match the number of CPU cores. Options: nginx default `"4"`;  or any `integer` http://nginx.org/en/docs/ngx_core_module.html#worker_processes
 
-[*worker_connections*]
-Set the number of worker connections.
-Options: nginx default `"768"`, or any `integer`
+* `[*worker_connections*]` - Set the number of worker connections. Options: nginx default `"768"`, or any `integer`
 
-[*user*]
-standard nginx user
-Change the default user, nginx is run under. The specified unix user must exist. Nginx default `"www-data"`. Options `String`
+* `[*user*]` - Standard nginx user. Change the default user, nginx is run under. The specified unix user must exist. Nginx default `"www-data"`. Options `String`
 
-[*server_tokens*]
-Disable the server tokens and don't show OS details on error pages.
-options: `"on"`, `"off"`; disable server tokens; don't show OS details
+* `[*server_tokens*]` - Disable the server tokens and don't show OS details on error pages. Options: `"on"`, `"off"`; disable server tokens; don't show OS details
 
-[*client_header_buffer_size*]
-Specifies the header buffer size; If you handle large cookies or other header data, increase the buffer. If this buffer does not suffice the "large_client_header_buffers" will be used. Nginx default "1k". Options: `number of kilobytes as Integer`
+* `[*client_header_buffer_size*]` - Specifies the header buffer size; If you handle large cookies or other header data, increase the buffer. If this buffer does not suffice the "large_client_header_buffers" will be used. Nginx default "1k". Options: `number of kilobytes as Integer`
 
-[*large_client_header_buffers*]
-Specifies the maximum number and size of the client buffer; If you handle large cookies or other header data increase the buffer. Nginx defaul "4 8k". Options `number of buffers as Integer` and `size of buffer as Integer`
+* `[*large_client_header_buffers*]` - Specifies the maximum number and size of the client buffer; If you handle large cookies or other header data increase the buffer. Nginx defaul "4 8k". Options number of buffers as `Integer` and size of buffer as `Integer`
 
 
 further information about HTTP headers https://www.owasp.org/index.php/List_of_useful_HTTP_headers
 
-[*x_frame_headers*]
-Options: `DENY`, `SAMEORIGIN`, `ALLOW-FROMuri`; 
+* `[*x_frame_headers*]` - Options: `DENY`, `SAMEORIGIN`, `ALLOW-FROMuri`; 
 
-[*x_content_type_options*]
-Options: `nosniff` or  `blank`
+* `[*x_content_type_options*]` - Options: `nosniff` or  `blank`
 
-[*x_xss_protection*]
-Options: `1; mode=block`, `0`, `1`
+* `[*x_xss_protection*]` - Options: `1; mode=block`, `0`, `1`
 
-[*strict_transport_security*]
-Options: `max-age= in seconds`, `includeSubdomains`, `preload`; or any combination of those options
+* `[*strict_transport_security*]` - Options: `max-age= in seconds`, `includeSubdomains`, `preload`; or any combination of those options
 
-[*disable_default_site*]
-Remove the default system link from sites-enabled. Options: `true`, `false`  
+* `[*disable_default_site*]` - Remove the default system link from sites-enabled. Options: `true`, `false`  
 
-[*override_default_site*]
-Override the standard index.html with a blank document. Options: `true`, `false`
+* `[*override_default_site*]` - Override the standard index.html with a blank document. Options: `true`, `false`
 
 # Usage 
 Since this module installs and changes system configuration files, it must be run with root privileges.
