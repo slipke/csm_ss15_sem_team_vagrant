@@ -6,8 +6,8 @@ So all the cookbooks only have one external dependencies, see section [Dependenc
 For more details about the cookbooks, please refer to the particular readme files.
 
 ## Requirements
-    * [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
-    * [Berkshelf](http://berkshelf.com/)
+* [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
+* [Berkshelf](http://berkshelf.com/)
 
 ## Platforms 
     * Debian 8 and later (tested, should work with older versions, too)

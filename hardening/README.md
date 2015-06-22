@@ -13,11 +13,13 @@ Following tasks are provided:
 More details about the specific solutions can be found in the sections chef and puppet.
 
 ## Requirements
- * Chef Server/Client, ChefDK (tested with Chef version 12.x)
+* [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
+* [Berkshelf](http://berkshelf.com/)
+
  
  OR
  
- * Puppet (tested with Puppet version 3.7.x)
+* [Puppet 3.x](https://puppetlabs.com/puppet/puppet-open-source)
  
 ## Platforms 
     * Debian 8 and later (tested, should work with older versions, too)

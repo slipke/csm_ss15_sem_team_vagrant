@@ -7,7 +7,7 @@ For more details about the cookbooks, please refer to the particular readme file
 
 
 ## Requirements
-    * [Puppet 3.x][https://puppetlabs.com/puppet/puppet-open-source]
+* [Puppet 3.x](https://puppetlabs.com/puppet/puppet-open-source)
 
 ## Platforms
     * Debian 8 and later (tested, should work with older versions, too)
@@ -33,7 +33,7 @@ Hence the modules install and change system configuration files, they must be ru
         }
     }`
     
-### 4, Run the puppet script with:    
+### 4. Run the puppet script with:    
 
     * `sudo puppet apply /path/toScript'`
         

@@ -6,7 +6,7 @@ Essentially this module rewrites the, already in the mysql-server package includ
 The hardening and install/update modules are seperate and can be included or excluded at will.
 
 ## Requirements
-* Puppet
+* [Puppet 3.x](https://puppetlabs.com/puppet/puppet-open-source)
 
 ## Platforms 
     * Debian 8 and later (tested, should work with older versions, too)

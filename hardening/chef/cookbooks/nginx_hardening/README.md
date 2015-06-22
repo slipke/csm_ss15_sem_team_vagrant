@@ -3,11 +3,11 @@
 ## Description
 This cookbook brings secure nginx settings to your system. It installs/updates the openssl and nginx package and provides you with a secure and easy to manage nginx configuration. 
 All changes are made in "/etc/nginx/nginx.conf". Besides the nginx hardening, this cookbook also gives you the option of a very basic, tailored system optimization. 
-Please refer to the section [Attributes][Attributes] for further information. The hardening and install/update recipes are seperate and can be included or excluded at will.
+Please refer to the section [Attributes](#Attributes) for further information. The hardening and install/update recipes are seperate and can be included or excluded at will.
 
 ## Requirements
-    * [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
-    * [Berkshelf](http://berkshelf.com/)
+* [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
+* [Berkshelf](http://berkshelf.com/)
 
 ## Platforms 
     * Debian 8 and later (tested, should work with older versions, too)
@@ -27,14 +27,14 @@ Berkshelf is used as a dependency management tool. To resolve and install all th
 The file "attributes/default.rb" acts as a central configuration file.
 
 ### general
-* `default['nginx']['worker_processes'] = 'auto'` - Set the number of nginx worker processes. A good start is to match the number of CPU cores. Nginx default is "4". Options: `auto` (will get the number of CPU cores) or `Integer` more information [Nginx Documentation][http://nginx.org/en/docs/ngx_core_module.html#worker_processes]
+* `default['nginx']['worker_processes'] = 'auto'` - Set the number of nginx worker processes. A good start is to match the number of CPU cores. Nginx default is "4". Options: `auto` (will get the number of CPU cores) or `Integer` more information [Nginx Documentation](http://nginx.org/en/docs/ngx_core_module.html#worker_processes)
 * `default['nginx']['worker_connections'] = 'auto'` - Set the number of worker connections. Nginx default is "768". Options: `auto` (gets users ressource limits) or `Integer`
 * `default['nginx']['user'] = ['www-data']` - Change the default user, nginx is run under. The specified unix user must exist. Nginx default "www-data". Options `String`
 * `default['nginx']['server_tokens'] = ['off']` - Disable the server tokens and don't show OS details on error pages. Nginx default "on" Options: `on`, `off`
 * `default['nginx']['client_header_buffer_size'] = ['1k']` - Specifies the header buffer size; If you handle large cookies or other header data, increase the buffer. If this buffer does not suffice the "large_client_header_buffers" will be used. Nginx default "1k". Options: `number of kilobytes as Integer`
 * `default['nginx']['large_client_header_buffers'] = ['2 1k']` - Specifies the maximum number and size of the client buffer; If you handle large cookies or other header data increase the buffer. Nginx defaul "4 8k". Options `number of buffers as Integer` and `size of buffer as Integer`
 
-further information about HTTP headers [OWASP][https://www.owasp.org/index.php/List_of_useful_HTTP_headers]
+further information about HTTP headers [OWASP](https://www.owasp.org/index.php/List_of_useful_HTTP_headers)
 
 ### Headers
 * `default['nginx']['X_Frame_Headers'] = ['SAMEORIGIN']` - Options: `DENY`, `SAMEORIGIN`, `ALLOW-FROMuri`; 
@@ -50,11 +50,7 @@ further information about HTTP headers [OWASP][https://www.owasp.org/index.php/L
 ## Usage
 CD into the hardening folder and execute the command below. Hence this cookbooks installs and changes system configuration files, it must be run with root privileges.
 
-  * sudo chef-client --local-mode --runlist 'recipe[nginx_hardening]'
-  
-Vagrant:
-    * TODO
-    
+* `sudo chef-client --local-mode --runlist 'recipe[nginx_hardening]'`
 
 ## FAQ
 	* If you don't want to update or install the nginx package from the system mananger, remove the line `include_recipe "nginx_hardening::check_nginx"` from "recipes/default.rb"

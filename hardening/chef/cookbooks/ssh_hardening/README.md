@@ -5,8 +5,8 @@ This chef cookbook consists of two recipes. The first, an easy to use recipe, "u
 The second recipe "server" provides secure ssh server configurations. Both can be used independently.
 
 ## Requirements
-    * [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
-    * [Berkshelf](http://berkshelf.com/)
+* [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
+* [Berkshelf](http://berkshelf.com/)
 
 ## Platforms 
     * Debian 8 and later (tested, should work with older versions, too)
@@ -17,11 +17,11 @@ The [opscode apt cookbook](https://github.com/opscode-cookbooks/apt) makes sure,
 Berkshelf is used as a dependency management tool. To resolve and install all the Dependencies cd into the directory and execute following command:
 
 ### Berkshelf3
-    * `berks vendor cookbooks`
+* `berks vendor cookbooks`
 
 ### Berkshelf 2
-    * `berks install --path cookbooks`    
-    
+* `berks install --path cookbooks`
+
 ## Attributes
 The file "attributes/default.rb" acts as a central configuration file.
 
@@ -43,10 +43,6 @@ This recipe creates new (System-)Users and puts specified SSH keys into the fold
 CD into the hardening folder and execute the command below. Hence this cookbooks installs and changes system configuration files, it must be run with root privileges.
   
   * `sudo chef-client --local-mode --runlist 'recipe[ssh_hardening]'`
-  
-Vagrant:
-    * TODO
-
 
 ## FAQ
 	* If you don't want to manage your users manually or with another recipe, remove the line `include_recipe "ssh_hardening::usermanagement"` from "recipes/default.rb"

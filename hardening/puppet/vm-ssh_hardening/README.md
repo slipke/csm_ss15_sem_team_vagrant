@@ -5,7 +5,7 @@ This module provides you with secure openssh settings. Besides that, you can man
 All the manifests work individually aswell.
 
 ## Requirements
-    * [Puppet 3.x][https://puppetlabs.com/puppet/puppet-open-source]
+* [Puppet 3.x](https://puppetlabs.com/puppet/puppet-open-source)
 
 ## Platforms
     * Debian 8 and later (tested, should work with older versions, too)
