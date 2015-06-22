@@ -25,7 +25,7 @@ If you use this cookbook as standalone projekt you have to install chef.
 ####manuel
 If you use this project as standalone project, kepp in mind that is only tested and verified with the linux hashicorp/precise32 vagrant box. If you have a vm where you want to setup this project, you should have chef installed.
 A possible chef installation is [chefdk](https://downloads.chef.io/chef-dk/).  Berkshelf is need for the Dependency Management ( this is already included in the chefdk). When you have installed the chefdk (or chef + berkshelf),you should switch to the git repo. Now you can resolve the dependencies by typing "berks install".
-After that you can start the chef installation with: "chef-solo -c ./roles/tomcatRole.rb" + "chef-solo -c ./roles/tomcatConfig.rb"
+After that you can start the chef installation.
 
 ###cookbooks
 * [apt](https://supermarket.chef.io/cookbooks/apt)
