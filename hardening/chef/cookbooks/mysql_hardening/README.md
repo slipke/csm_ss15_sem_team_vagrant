@@ -6,23 +6,22 @@ Essentially this cookbook rewrites the, already in the mysql-server package incl
 The hardening and install/update recipes are seperate and can be included or excluded at will.
 
 ## Requirements
-    * [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
-    * [Berkshelf](http://berkshelf.com/)
- 
+* [Chef Server, Client or Chef-dk][https://www.chef.io] (tested with Chef version 12.x)
+* [Berkshelf][http://berkshelf.com/]
+
 ## Platforms 
-    * Debian 8 and later (tested, should work with older versions, too)
-    * Ubuntu 14 and later (tested, should work with older versions, too)
-    
+* Debian 8 and later (tested, should work with older versions, too)
+* Ubuntu 14 and later (tested, should work with older versions, too)
+
 ## Dependencies
 The [opscode apt cookbook](https://github.com/opscode-cookbooks/apt) makes sure, the apt reposítory list is up to date. 
 Berkshelf is used as a dependency management tool. To resolve and install all the Dependencies cd into the directory and execute following command:
 
 ### Berkshelf3
-    * `berks vendor cookbooks`
+* `berks vendor cookbooks`
 
 ### Berkshelf 2
-    * `berks install --path cookbooks`
-
+* `berks install --path cookbooks`
 
 ## Attributes
 The file "attributes/default.rb" acts as a central configuration file.
@@ -37,10 +36,10 @@ The file "attributes/default.rb" acts as a central configuration file.
 ## Usage
 CD into the hardening folder and execute the command below. Hence this cookbooks installs and changes system configuration files, it must be run with root privileges.
 
-    * `sudo chef-client --local-mode --runlist 'recipe[mysql_hardening]'`
-    
+* `sudo chef-client --local-mode --runlist 'recipe[mysql_hardening]'`
+
 ## FAQ
-	* If you don't want to update or install the mysql package from the system mananger, remove the line `include_recipe "mysql_hardening::check_mysql"` from "recipes/default.rb"    
+* If you don't want to update or install the mysql package from the system mananger, remove the line `include_recipe "mysql_hardening::check_mysql"` from "recipes/default.rb"    
 
 ## Contributors
 * Steffen Hinderer
