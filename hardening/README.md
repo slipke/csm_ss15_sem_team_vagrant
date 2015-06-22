@@ -2,18 +2,18 @@
 
 ## Description
 This is a collection of common hardening tasks for Ubuntu/Debian Systems. Two of the most common configuration management tools, chef an puppet, are supported.
-All the configuration scripts were written for developers who don't want to deal with Linux-Server configuration and still need a secure system up and running within minutes. Even though it is meant for short term production servers, you can also apply those cookbooks to your local development virtual machine with vagrant. The advantage is, that you then have the identical setup on your development as in production environment.
-With that in mind, there are no external dependencies so you can run all the tasks out of the box in a solo/standalone mode. Even it's not tested, they should also run in the server mode of the specific configuration management tool.
+All the configuration scripts were written for developers who don't want to deal with Linux-Server configuration and still need a secure system up and running within minutes. Even though it is meant for short term production servers, you can also apply those cookbooks to your local development virtual machine with vagrant. The advantage is, that you then have the identical setup on your development and the production environment.
+With that in mind, there are few external dependencies so you can run all the tasks out of the box in a solo/standalone mode. Even it's not tested, they should also run in the server mode of the specific configuration management tool.
 
 Following tasks are provided:
-    * SSH hardening
-    * Nginx hardening
-    * MySql hardening
+* SSH hardening
+* Nginx hardening
+* MySql hardening
     
 More details about the specific solutions can be found in the sections chef and puppet.
 
 ## Requirements
- * Chef Server/Client (tested with Chef version 12.x)
+ * Chef Server/Client, ChefDK (tested with Chef version 12.x)
  
  OR
  

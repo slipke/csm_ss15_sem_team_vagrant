@@ -1,7 +1,7 @@
 # ssh_hardening - Chef cookbook
 
 ## Description
-This chef cookbook consists of two recipes. The First, an easy to use recipe, "usermanagement" manages users and their ssh keys on a very basic level. You can add users and deposit a ssh key file.
+This chef cookbook consists of two recipes. The first, an easy to use recipe, "usermanagement" manages users and their ssh keys on a very basic level. You can add users and deposit a ssh key file.
 The second recipe "server" provides secure ssh server configurations. Both can be used independently.
 
 ## Requirements
@@ -26,18 +26,18 @@ Berkshelf is used as a dependency management tool. To resolve and install all th
 The file "attributes/default.rb" acts as a central configuration file.
 
 ### User Management settings
-This recipe creates new System-Users and puts specified SSH keys into the folder `/home/yourUserName/.ssh`. It also adds the created users to the group `sudo` if wanted. You can add more than one users if you copy and paste all the `user` entries and increment the array key. For example `['user'][1]['name']` for a second user.
+This recipe creates new (System-)Users and puts specified SSH keys into the folder `/home/yourUserName/.ssh`. It also adds the created users to the group `sudo` if wanted. You can add more than one users if you copy and paste all the `user` entries and increment the array key. For example `['user'][1]['name']` for a second user.
 
-* `['user'][0]['name'] 			= 'youUserName'`	The name of the new user. Options `String`
-* `['user'][0]['password'] 		= 'secret'`	-	The users password as plaintext. It will be hashed with the `openssl passwd` function by the recipe. Options: `String` or `blank` if system user
-* `['user'][0]['publicKey'] 	        = ["thisismypublickey", "thisismypublickey2"]`	-	Add the public keys for SSH login, seperated by ",". Options: SSH Keys (rsa, dsa) as `String`
-* `['user'][0]['sudo']              	= false`	-	Adds the user to the sudo group to gain root privileges if needed. Options: `true`, `false`
-* `['user'][0]['system'] 		= false`	-	If true it creates a system user without a home directory and password. Options: `true`, `false`
+* `['user'][0]['name'] = 'youUserName'` - The name of the new user. Options `String`
+* `['user'][0]['password'] = 'secret'` - The users password as plaintext. It will be hashed with the `openssl passwd` function by the recipe. Options: `String` or `blank` if system user
+* `['user'][0]['publicKey'] = ["thisismypublickey", "thisismypublickey2"]` - Add the public keys for SSH login, seperated by `,`. Options: SSH Keys (rsa, dsa) as `String`
+* `['user'][0]['sudo'] = false` -'Adds the user to the sudo group to gain root privileges if needed. Options: `true`, `false`
+* `['user'][0]['system'] = false` - If true it creates a system user without a home directory and password. Options: `true`, `false`
 
 ### SSH settings
-* `['ssh']['port'] 			= [22]`	-	        Change the systems SSH port. Default is "22". Options: `Integer`
-* `['ssh']['passwordAuth']		= ['no']`	-	Allow remote login via password or SSH key only. Options: `no`, `yes`
-* `['ssh']['permitRootLogin']	        = ['yes']`	-	Allow remote root login. This does not affect the sudo option from above. Options: `no`, `without password`
+* `['ssh']['port'] = [22]` - Change the systems SSH port. Default is `22`. Options: `Integer`
+* `['ssh']['passwordAuth'] = ['no']` - Allow remote login via password or SSH key only. Options: `no`, `yes`
+* `['ssh']['permitRootLogin'] = ['yes']` - Allow remote root login. This does not affect the sudo option from above. Options: `no`, `without password`
 
 ## Usage
 CD into the hardening folder and execute the command below. Hence this cookbooks installs and changes system configuration files, it must be run with root privileges.

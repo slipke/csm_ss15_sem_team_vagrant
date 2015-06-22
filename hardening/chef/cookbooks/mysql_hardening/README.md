@@ -27,20 +27,17 @@ Berkshelf is used as a dependency management tool. To resolve and install all th
 ## Attributes
 The file "attributes/default.rb" acts as a central configuration file.
 
-	* `default['mysql']['change_root_password']` 			= true	-	change the password for the mysql root user. Options: `true`, `false` 
-	* `default['mysql']['root_password']` 				= ''	-	Password for the mysql root user. If you install mysql through this script the root password will be blank. Options: `String`; default: blank
-	* `default['mysql']['new_root_password']` 			= 'PW'	-	the new password for the mysql root user. Options: `String`
-	* `default['mysql']['remove_anonmymous_user']` 			= true	-	the MySql default settings allow anonymous users (black user name) to connect to the database, true will remove this behavior. Options: `true`, `false` 
-	* `default['mysql']['disallow_root_login']` 			= true	-	dissallow remote root login. Root login will only be possible from localhost. Options: `true`, `false` 
-	* `default['mysql']['remove_test_database']` 			= true	-	This option removes the default test database, which every user can access. Options: `true`, `false` 
+	* `default['mysql']['change_root_password']`   = true - change the password for the mysql root user. Options: `true`, `false` 
+	* `default['mysql']['root_password']`  = '' - Password for the mysql root user. If you install mysql through this script the root password will be blank. Options: `String`; default: blank
+	* `default['mysql']['new_root_password']`  = 'PW' - the new password for the mysql root user. Options: `String`
+	* `default['mysql']['remove_anonmymous_user']` = true - the MySql default settings allow anonymous users (black user name) to connect to the database, true will remove this behavior. Options: `true`, `false` 
+	* `default['mysql']['disallow_root_login']` = true - dissallow remote root login. Root login will only be possible from localhost. Options: `true`, `false` 
+	* `default['mysql']['remove_test_database']` = true - This option removes the default test database, which every user can access. Options: `true`, `false` 
 
 ## Usage
 CD into the hardening folder and execute the command below. Hence this cookbooks installs and changes system configuration files, it must be run with root privileges.
 
     * `sudo chef-client --local-mode --runlist 'recipe[mysql_hardening]'`
-    
-Vagrant:
-    * TODO
     
 ## FAQ
 	* If you don't want to update or install the mysql package from the system mananger, remove the line `include_recipe "mysql_hardening::check_mysql"` from "recipes/default.rb"    
