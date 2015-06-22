@@ -31,7 +31,7 @@ If you use this cookbook as standalone projekt you have to install chef.
 Check first if you have installed vagrant and virtualbox.  After that check out the project in an user writeable folder.
 Open a terminal / commandline in this folder and just type: vagrant up
 ###manual
-If you use this project as standalone project, kepp in mind that is only tested and verified with the linux hashicorp/precise32 vagrant box. If you have a vm where you want to setup this project, you should have the [chefdk](https://downloads.chef.io/chef-dk/) installed on your vm. Berkshelf is need for the Dependency Management ( this is already included in the chefdk). When you have installed the chefdk (or chef + berkshelf),you should switch to the git repo. Now you can resolve the dependencies by typing "berks install". After that you can start the chef installation with: "chef-solo -c ./roles/jboss.rb". 
+If you use this project as standalone project, kepp in mind that is only tested and verified with the linux hashicorp/precise32 vagrant box. If you have a vm where you want to setup this project, you should have the [chefdk](https://downloads.chef.io/chef-dk/) installed on your vm. Berkshelf is need for the Dependency Management ( this is already included in the chefdk). When you have installed the chefdk (or chef + berkshelf),you should switch to the git repo. Now you can resolve the dependencies by typing "berks install". After that you can start the chef installation.
 
 ##Configuration
 This project configure a management user for the management jboss web interface. The Username is "Administrator" and the password is "changeit!" both without the quote. If you want to change these credentials you have to edit the [default.rb](/attributes/default.rb) file. 
