@@ -11,6 +11,11 @@ Simple modules made it easy to setup a basic box. reusable modules for students 
 ###which provision project should be used?
 describe here our conclusion about the usage factors of puppet and chef. Which provision technology should be used for which use case / knowledge base?
 
+@@Notes@@
+Korbi's opinion: student projects: the effort which has to be invested to setup a chain with puppet / chef + vagrant can be very time consuming. If the configuration is not extraordinary, there are many setups already in the repositorys of chef and puppet. If the student does not start from sratch and instead use these projects, they can profit from a tool chain.
+training curve: For me, it was easier to use puppet that chef. Maybe i start with chef and then switched to puppet.
+conclusion: Dev Ops are very important in bigger companys. I think that chef is suitable for a small company which want to start with DevOps. For a big or developed company, puppet can be more profitable because of the enterprise solution and support. 
+
 ##Install vagrant (Link to vagrant.md)
 * [Project specific installation documentation](./vagrant.md)
 
