@@ -1,7 +1,5 @@
 #Vagrant -  in terms of this project
 
-@@@ WIP @@@
-
 
 ##vagrant installation
 vagrant is available for Windows, Linux and Mac. You can download your package [here](https://www.vagrantup.com/downloads.html). Our projects are tested with virtualbox, so we recommend to use virtualbox as virtualisation software. However the projects should work also with the other supported software mentioned by vagrant. 
@@ -84,3 +82,7 @@ These commands can be used in your shell or command line interface. Just open su
 * ```vagrant suspend``` standby the guest system
 * ```vagrant halt``` shutdown the guest system
 * ```vagrant destroy``` shutdown the guest system and delete all data which is produced during the startup
+
+
+##usefull-vagrant-commands
+ For more Information refer to the offical documentation of [vagrant](https://docs.vagrantup.com/v2/)
