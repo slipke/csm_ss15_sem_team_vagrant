@@ -36,6 +36,11 @@ After that you can start the chef installation.
 ##Installation
 Check first if you have installed vagrant and virtualbox.  After that check out the project in an user writeable folder.
 Open a terminal / commandline in this folder and just type: vagrant up
+###manual
+If you use this project as standalone project, kepp in mind that is only tested and verified with the linux hashicorp/precise32 vagrant box. If you have a vm where you want to setup this project, you should have the [chefdk](https://downloads.chef.io/chef-dk/) installed on your vm. Berkshelf is need for the Dependency Management ( this is already included in the chefdk). When you have installed the chefdk (or chef + berkshelf),you should switch to the git repo. Now you can resolve the dependencies by typing "berks install". After that you can start the chef installation
+ with: 
+ `sudo chef-client --local-mode --runlist 'recipe[apt::default],recipe[java::default],recipe[tomcat::default],recipe[tomcat::users]'`
+
 
 ##Configuration
 This project configure a management user for the management tomcat web interface. The Username is "admin" and the password is "password" both without the quote. If you want to change these credentials you have to edit the [admin.json file](/data_bags/tomcat_users/admin.json) file. 
