@@ -42,6 +42,7 @@ Any computer managed by the Chef Server is considered a node. Chef client needs 
 
 ##Chef-Solo
 Chef-solo is an open source implementation of the Chef-client. With Chef-solo you can manage a single node without having to access the Chef Server. It requires the cookbooks an dependencies to be on the same physikal disk as the node. It is very useful if you want to manage just a single computer for special tasks.
+As an alternative you can run chef since v11.8 in local-mode by using `chef-client --local-mode`
 
 ##Directory Structure
   - `chef-repo`
@@ -53,5 +54,5 @@ Chef-solo is an open source implementation of the Chef-client. With Chef-solo yo
 
 ##Librarian-chef/Berkshelf
 With Chef your recipes get executed exactly in the order they are specified in your cookbooks. This can lead to missing dependencies which are neccessary for some recipes to work. As it can be very confusing to take care of all dependencies there are tools which take care of that for you.
-The currently most popular dependency manager for Chef is Berkshelf which is also part of the ChefDK
+The currently most popular dependency manager for Chef is [Berkshelf](http://berkshelf.com/) which is also part of the ChefDK
 
