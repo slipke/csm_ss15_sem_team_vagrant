@@ -24,35 +24,34 @@ A recipe is a collection of resources that describe a particular configuraton. A
 ##Cookbook
 In a cookbook, recipes are grouped together to make them more manageable and maintainable than just single recipes.
 
+##Role
+A role can contain multiple cookbooks to serve for a specific purpose e.g. a Web-Server, a Build-Server...
+
 #Architecture
 
 ##Workstation
 The workstation is the computer you use everyday. From this machine you can create, edit and manage your cookbooks and recipes. The platform of your workstation can be any OS with Chef being available. That means you can manage a Ubuntu Server from your Windows workstation.
-@@@ WIP @@@
 
 ##Server
-The Chef Server hosts your cookbooks to make them available for multiple clients. It is basically your main repository for cookbooks.
-@@@ WIP @@@
+The Chef Server hosts your cookbooks to make them available for multiple clients. It is basically your main repository for cookbooks. The Chef Server interacts with the nodes and supplies them with the latest cookbooks.
+
 
 ##Node
 Any computer managed by the Chef Server is considered a node. Chef client needs to be installed on this computers but that is the only requirement to configure these machines.
-@@@ WIP @@@
+
 
 ##Chef-Solo
 Chef-solo is an open source implementation of the Chef-client. With Chef-solo you can manage a single node without having to access the Chef Server. It requires the cookbooks an dependencies to be on the same physikal disk as the node. It is very useful if you want to manage just a single computer for special tasks.
-@@@ WIP @@@
 
 ##Directory Structure
   - `chef-repo`
-    - `certificates`
-    - `config`
-    - `cookbooks`
-    - `data_bags`
-    - `environments`
-    - `roles`
+    - `cookbooks` //used to store the cookbooks which configure the system
+    - `data_bags` //used to store data bags which are global variables stored as JSON-data that can be accessed from the Chef Server an be used in recipes
+    - `environments`//defines the environments that are available to the Chef Server e.g. testing, production...
+    - `roles`//used to store the files that are available to thr Chef Server
   
-@@@ WIP @@@
 
 ##Librarian-chef/Berkshelf
-@@@ WIP @@@
+With Chef your recipes get executed exactly in the order they are specified in your cookbooks. This can lead to missing dependencies which are neccessary for some recipes to work. As it can be very confusing to take care of all dependencies there are tools which take care of that for you.
+The currently most popular dependency manager for Chef is Berkshelf which is also part of the ChefDK
 
