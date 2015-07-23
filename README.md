@@ -34,9 +34,9 @@ There are some more links which may help you troubleshooting your problems or ge
 * [external tutorial](https://github.com/mitchellh/vagrant)
 * [offical vagrant documentation](https://docs.vagrantup.com/v2/)
     
-## [Setup Chef](chef.md) 
+## [Introduction and Setup Chef](chef.md) 
 
-## [Setup Puppet](puppet.md) 
+## [Introduction and Setup Puppet](puppet.md) 
 
 ## Used software / Available Server Modules
 
@@ -64,12 +64,7 @@ Even though not tested, they also should work with previous and later Versions a
 
 
 
-## Introduction of used software
 
-
-### chef
-
-### puppet
 
 ## Contributors
 * Steffen Hinderer
