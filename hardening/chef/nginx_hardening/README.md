@@ -60,7 +60,7 @@ CD into the hardening folder and execute the command below. Hence this cookbooks
 
 
 ## License and Author
- * Author:: Steffen Hinderer steven@posteo.de
+ * Author:: Steffen Hinderer sh219@hdm-stuttgart.de
  
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

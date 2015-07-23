@@ -1,5 +1,5 @@
 # Infrastructure as Code
-The following README pages summarize our project results in the class "System Engineering and Management" in the summer semester 2015 at the [Hochschule der Medien Stuttgart](http://www.hdm-stuttgart.de/) in the major [Computer Science and Media](http://www.mi.hdm-stuttgart.de/csm). We'd like to thank our mentor and lecturer Thomas Pohl for his support and the interesting sessions.  
+The following README pages summarize our project results in the class "System Engineering and Management" in the summer semester 2015 at the [Hochschule der Medien Stuttgart](http://www.hdm-stuttgart.de/) in the major [Computer Science and Media](http://www.mi.hdm-stuttgart.de/csm).
 
 ## Why this Project?
 Virtual servers are usually short living, often just used for days or in the best case a couple of months. The Setup from scratch is tedious and time consuming. To mimize the manual work, this project wrapped common server usage szenarios with common hardening tasks into code. Two popular and Open Source frameworks where used, [Chef](https://www.chef.io/) and [Puppet](https://puppetlabs.com/). Under normal circumstances both orchestrating frameworks rely on a Master - Slave configuration, where the Master manages multiple Slaves. In this project we set great value upon a Master free approach. That way the power of orchestration works on just a single machine, too. It also cuts down the time of setting up the infrastructure. 
@@ -48,11 +48,19 @@ There are some more links which may help you troubleshooting your problems or ge
 ## Available Hardening Modules
 The hardening modules are a collection of common hardening tasks for Debian and Debian based Systems like Ubuntu. All hardening tasks are available for both Chef and Puppet. The Following Modules are provided:
 
-* MySQL
-* Nginx
-* SSH
+* MySQL - [Chef](/hardening/chef/mysql_hardening), [Puppet](/hardening/puppet/mysql_hardening)
+* Chef Nginx - [Chef](/hardening/chef/nginx_hardening), [Puppet](/hardening/puppet/nginx_hardening)
+* Chef SSH - [Chef](/hardening/chef/ssh_hardening), [Puppet](/hardening/puppet/ssh_hardening)
 
 Detailed information can be found in the particular READMES.
+
+## Supported Operating Systems
+All modules have been tested with:
+
+* Debian 8
+* Ubuntu 14.04
+
+Even though not tested, they also should work with previous and later Versions and other Debian based distributions.
 
 ## How to use librarian-puppet on windows
 
@@ -87,4 +95,4 @@ http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## Special thanks to...
-...our mentor and lecturer Thomas Pohl for his support and the interesting sessions.
+...our mentor and lecturer Thomas Pohl for his support and the interesting sessions tons of information and lots of insights.
