@@ -25,6 +25,7 @@ training curve: For me, it was easier to use puppet that chef. Maybe i start wit
 conclusion: Dev Ops are very important in bigger companys. I think that chef is suitable for a small company which want to start with DevOps. For a big or developed company, puppet can be more profitable because of the enterprise solution and support. 
 
 @@Notes@@ Steve: chef offers an enterprise solution as well!
+@@Notes@@ meeting: Chef is suitable for developer, because of the strong ruby orientation. For a system admin puppet will be better because of the declarative approach.
 
 ## Install Vagrant (Link to vagrant.md)
 
