@@ -22,7 +22,7 @@ To install all required modules you need [librarian-puppet](https://github.com/r
 
 Check first if you have installed vagrant, virtualbox, puppet and librarian-puppet. After that run the following commands:
 
-* `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and `cd lamp-apache/puppet`
+* `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and `cd lamp-nginx/puppet`
 * `librarian-puppet install`
 * `vagrant up`
 
