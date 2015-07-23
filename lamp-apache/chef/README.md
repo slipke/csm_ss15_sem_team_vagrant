@@ -7,6 +7,7 @@ The credentials for the mysql-user can be configured in the [default.rb](https:/
 
 ###Installed software
 If you only want to quickly setup a lamp stack just download  [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the github readme of vagrant-berkshelf plugin.
+If you want to use this project without vagrant but with chef get the [ChefDK](https://downloads.chef.io/chef-dk/) which contains all neccessary tools to setup the lamp-stack
 
 ###cookbooks
 * [apt-get](https://supermarket.chef.io/cookbooks/apt)
@@ -20,8 +21,17 @@ If you only want to quickly setup a lamp stack just download  [vagrant](https://
 ###Installation with vagrant
 Check first if you have installed vagrant and virtualbox.  After that just run `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` an navigate to /lamp-apache/chef and run `vagrant up` from your terminal
 
-###Installation with Chef
-@@@WIP@@@
+###Installation with Chef and Berkshelf
+Navigate to your chef directory and type the following:
+#### Berkshelf3
+    * berks vendor cookbooks
+
+#### Berkshelf 2
+    * berks install --path cookbooks
+
+Hence the cookbooks install and change system configuration files, they must be run with root permissions.
+
+    * sudo chef-client --local-mode --runlist 'recipe[apt], recipe[apache], recipe[mysql], recipe[php]'
 
 
 ## License and Author
