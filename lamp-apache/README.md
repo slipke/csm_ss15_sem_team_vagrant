@@ -14,5 +14,6 @@ Either Chef and puppet are supported to automatically run the necessary tasks. T
 
 ##Contributors
 * Patrik Jakober
+* Simon Lipke
 
 

@@ -1,6 +1,3 @@
-
-@@@ WIP @@@
-
 # What is puppet?
 
 Puppet is a tool used to manage and automate IT-Infrastructure. It uses its own declarative language to describe system configurations. 
@@ -23,7 +20,13 @@ you need a tool like [Vagrant](https://www.vagrantup.com) to manage your virtual
 
 ## Setup a local project
 
-@@@ TODO @@@
+### Install puppet
+
+To install puppet you can use [gem](https://rubygems.org): `sudo gem install puppet`
+
+### Install librarian-puppet
+
+To install the CLI tool librarian-puppet, you can user [gem](https://rubygems.org): `sudo gem install librarian-puppet`
 
 ### (Option 1) Install librarian-puppet to manage modules
 
@@ -65,8 +68,6 @@ system for changes, and if needed applies them.
 - Agents need good network to reach master servers
 
 ## Compiling a catalog
-
-@@@ WIP @@@
 
 1. Retrieve the node object
 2. Set Variables from the Node Object, from Facts, and from the Certificate
@@ -197,22 +198,6 @@ different authors offer open soruce modules. A popular repository on GitHub is [
 
 Modules can either be downloaded manually (see [Option 3](#option-3-download-modules-manually), or automatically by either using a dependency manager like `librarian-puppet` (see [Option 2](#option-1-install-librarian-puppet-to-manage-modules)), or cloning 
 from a GitHub repository (see [Option 2](#option-2-use-git-submodules-to-manage-modules))
-
-# Deprecation
-
-- Relative resolution of class names
-- Node inheritance
-- Import
-- ~= against non-string values
-- search
-- Variables with capital letters
-- Class names can contain hyphens
-- Mutation of arrays/hashes
-- ruby DSL .rb
-
-# Future
-
-http://docs.puppetlabs.com/puppet/3.7/reference/experiments_future.html
 
 # Resources
 
