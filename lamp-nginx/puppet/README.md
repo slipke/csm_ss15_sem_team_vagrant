@@ -7,7 +7,9 @@ This project installs and configures a simple lamp-stack with nginx, mysql and p
 ### Installed software
 
 If you only want to quickly setup a lamp stack just download [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/).
-To install all required modules you need [librarian-puppet](https://github.com/rodjek/librarian-puppet) (`sudo gem install librarian-puppet`) and [puppet](https://puppetlabs.com) (`sudo gem install puppet`).
+To install all required modules you need 
+* [librarian-puppet](https://github.com/rodjek/librarian-puppet) (`sudo gem install librarian-puppet`)
+* [puppet](https://puppetlabs.com) (`sudo gem install puppet`)
 
 ### Cookbooks
 

@@ -14,9 +14,10 @@ class common {
   ####
   # Install php, php-cli, php-fpm
   ####
-  class { 'php::fpm': }
-  class { 'php::cli': }
-  class { 'php::extension::apc': }
+#  class { 'php::fpm': }
+#  class { 'php::cli': }
+#  class { 'php::extension::apc': }
+  class { 'php': }
 
   ####
   # Install mysql
