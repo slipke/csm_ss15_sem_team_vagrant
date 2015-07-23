@@ -1,6 +1,6 @@
 name             'tomcat-chef'
-maintainer       'YOUR_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Korbinian Kram'
+maintainer_email 'kk114@hdm-stuttgart.de'
 license          'All rights reserved'
 description      'Installs/Configures tomcat'
 long_description 'Installs/Configures tomcat'
