@@ -214,6 +214,11 @@ from a GitHub repository (see [Option 2](#option-2-use-git-submodules-to-manage-
 
 http://docs.puppetlabs.com/puppet/3.7/reference/experiments_future.html
 
+## How to use librarian-puppet on windows
+
+For the usage of librarian-puppet you have to install [Ruby](http://rubyinstaller.org/downloads/) on your Windows machine.
+The librarian-puppet package needs also a puppet installation on the machine. This is also required, when you just want to download the puppet modules and install them on a guest system like a vagrant machine. It is possible that you will get SSL Authentication Errors when you start "librarian-puppet install". This is caused by non existent certificates. One fast workaround is to start your computer management and add a new envirment variable called "SSL_CERT_FILE" with the value of CHEFDK-HOME\embedded\ssl\certs\cacert.pem or download the file http://curl.haxx.se/ca/cacert.pem and point your path variable to this file.
+
 # Resources
 
 - [Core types cheat sheet](https://docs.puppetlabs.com/puppet_core_types_cheatsheet.pdf) 
