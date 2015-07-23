@@ -61,15 +61,9 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
  
-  #config.berkshelf.enabled = true
+  
 
- # config.vm.provision "file", source: "./files/tomcat-users.xml.erb", destination: "/home/vagrant/tomcat-users.xml.erb"
- # config.vm.provision :shell do |shell|
-  #shell.inline = "sudo apt-get update;
-  #                mkdir -p /etc/puppet/modules;
-  #                puppet module install puppetlabs-java;
-  #                puppet module install puppetlabs-tomcat"
-  #end
+ 
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = ["modules","puppet/modules" ]
@@ -79,9 +73,7 @@ Vagrant.configure(2) do |config|
   end
   
 
- # config.vm.provision :shell do |shell|
- # shell.inline = "sudo chown -cR tomcat:tomcat /opt/apache-tomcat/conf/tomcat-users.xml"
- # end
+ 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
