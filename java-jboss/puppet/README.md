@@ -1,5 +1,4 @@
-# csm_ss15_sem_team_vagrant
-CSM SS15 System Engineering &amp; Management: Team Vagrant
+#Java JBoss
 
 This project installs a jboss instance based on the module of [example42/jboss](https://forge.puppetlabs.com/example42/jboss).
 If you do no other modifications and use vagrant you will find your Jboss-server under 192.168.33.10:8080.

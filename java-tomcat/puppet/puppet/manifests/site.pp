@@ -3,12 +3,6 @@ exec { 'apt-get update':
   path => '/usr/bin',
 }
 
-#include apt
-/*class { 'apt':
-  update => {
-    frequency => 'daily',
-  },
-}*/
 
 include java
 

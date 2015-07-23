@@ -57,19 +57,6 @@ Vagrant.configure(2) do |config|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
 
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
- 
-  #config.berkshelf.enabled = true
-
- # config.vm.provision "file", source: "./files/tomcat-users.xml.erb", destination: "/home/vagrant/tomcat-users.xml.erb"
- # config.vm.provision :shell do |shell|
-  #shell.inline = "sudo apt-get update;
-  #                mkdir -p /etc/puppet/modules;
-  #                puppet module install puppetlabs-java;
-  #                puppet module install puppetlabs-tomcat"
-  #end
 
   config.vm.provision :puppet do |puppet|
     puppet.module_path = ["modules","puppet/modules" ]
@@ -78,10 +65,6 @@ Vagrant.configure(2) do |config|
     puppet.manifest_file = "site.pp"
   end
   
-
- # config.vm.provision :shell do |shell|
- # shell.inline = "sudo chown -cR tomcat:tomcat /opt/apache-tomcat/conf/tomcat-users.xml"
- # end
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third

@@ -25,5 +25,3 @@ forge "https://forgeapi.puppetlabs.com"
 # mod 'puppetlabs-apache', '0.6.0', :github_tarball => 'puppetlabs/puppetlabs-apache'
 mod "puppetlabs-java"
 mod "example42-jboss"
-#mod "dsestero-jboss"
-#mod "puppetlabs-apt"

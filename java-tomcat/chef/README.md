@@ -1,5 +1,4 @@
-# csm_ss15_sem_team_vagrant
-CSM SS15 System Engineering &amp; Management: Team Vagrant
+# Java Tomcat
 
 This project installs a tomcat instance based on the cookbook of [opscode-cookbooks](https://github.com/opscode-cookbooks/tomcat) with a minor change by me.
 If you do no other modifications and use vagrant you will find your tomcat server under 192.168.33.11:8080.
