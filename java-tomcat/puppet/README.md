@@ -1,5 +1,4 @@
-# csm_ss15_sem_team_vagrant
-CSM SS15 System Engineering &amp; Management: Team Vagrant
+# Java Tomcat
 
 This project installs a tomcat instance based on the module of [puppetlabs/tomcat](https://forge.puppetlabs.com/puppetlabs/tomcat).
 If you do no other modifications and use vagrant you will find your tomcat-server under 192.168.33.45:8080.
