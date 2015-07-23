@@ -1,4 +1,4 @@
-# Java Tomcat Server
+# Java Tomcat 
 ##Description
 This project installs and configures a java tomcat server
 Either Chef and puppet are supported to automatically run the necessary tasks. The scripts speed up the process of setting up a fully equipped java tomcat server for people who don't want to deal with details. This folder contains the two provisioning possibilities for tomcat. Both install a tomcat server with an management user. The folders descripte with their names the used technology for provisioning.  Further information can be found under [chef/README.md](chef/README.md) or [puppet/README.md](puppet/README.md).
