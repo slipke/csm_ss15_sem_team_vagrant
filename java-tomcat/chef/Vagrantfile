@@ -87,7 +87,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #]
     chef.roles_path = "roles"
     chef.add_role("tomcatRole")
-    chef.add_role("tomcatConfig")
+   
    
   end
  # config.vm.provision :chef_solo do |chef|   
