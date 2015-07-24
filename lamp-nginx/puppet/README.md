@@ -7,14 +7,15 @@ This project installs and configures a simple lamp-stack with nginx, mysql and p
 ### Installed software
 
 If you only want to quickly setup a lamp stack just download [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/).
-To install all required modules you need 
-* [librarian-puppet](https://github.com/rodjek/librarian-puppet) (`sudo gem install librarian-puppet`)
+To install all required modules you need:
+
 * [puppet](https://puppetlabs.com) (`sudo gem install puppet`)
+* [librarian-puppet](https://github.com/rodjek/librarian-puppet) (`sudo gem install librarian-puppet`)
 
 ### Cookbooks
 
 * [jfryman-nginx](https://forge.puppetlabs.com/jfryman/nginx)
-* [nodes-php](https://forge.puppetlabs.com/nodes/php)
+* [mayflower-php](https://forge.puppetlabs.com/mayflower/php)
 * [puppetlabs-mysql](https://forge.puppetlabs.com/puppetlabs/mysql)
 
 
@@ -30,7 +31,7 @@ Check first if you have installed vagrant, virtualbox, puppet and librarian-pupp
 
 ## Configure
 
-@@@ WIP @@@
+You can change the mysql settings in the file _projetct_modules/common/manifests/init.pp_. For PHP settings read the documentation at [puppetlabs](https://forge.puppetlabs.com/mayflower/php)
 
 ## License and Author
  * Author: Simon Lipke sl110@hdm-stuttgart.de

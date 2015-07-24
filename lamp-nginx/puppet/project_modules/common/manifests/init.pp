@@ -1,4 +1,9 @@
 class common {
+  # Run apt-get update first
+  exec { "apt-update":
+    command => "/usr/bin/apt-get update"
+  }
+
   Exec { path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ] }
 
   ####
@@ -12,12 +17,9 @@ class common {
   }
 
   ####
-  # Install php, php-cli, php-fpm
+  # Install php
   ####
-#  class { 'php::fpm': }
-#  class { 'php::cli': }
-#  class { 'php::extension::apc': }
-  class { 'php': }
+  include ::php
 
   ####
   # Install mysql

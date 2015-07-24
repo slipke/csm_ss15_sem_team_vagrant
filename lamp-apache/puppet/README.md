@@ -12,7 +12,7 @@ To install all required modules you need [librarian-puppet](https://github.com/r
 ### Cookbooks
 
 * [puppetlabs-apache](https://forge.puppetlabs.com/puppetlabs/apache)
-* [nodes-php](https://forge.puppetlabs.com/nodes/php)
+* [mayflower-php](https://forge.puppetlabs.com/mayflower/php)
 * [puppetlabs-mysql](https://forge.puppetlabs.com/puppetlabs/mysql)
 
 
@@ -28,7 +28,7 @@ Check first if you have installed vagrant, virtualbox, puppet and librarian-pupp
 
 ## Configure
 
-@@@ WIP @@@
+To configure just read the documentations from the cookbooks-section.
 
 ## License and Author
  * Author: Simon Lipke sl110@hdm-stuttgart.de
