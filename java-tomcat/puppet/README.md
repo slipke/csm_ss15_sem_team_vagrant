@@ -25,8 +25,12 @@ If you use this project as standalone projekt you have to install puppet.
 
 
 ##Installation
-Check first if you have installed vagrant and virtualbox.  After that check out the project in an user writeable folder.
-Open a terminal / commandline in this folder and type: librarian-puppet install. This will resolve all dependencies. After that just type: vagrant up.
+Check first if you have installed vagrant, virtualbox, puppet and librarian-puppet. After that run the following commands:
+
+* `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and `cd lamp-apache/puppet`
+* `librarian-puppet install`
+* `vagrant up`
+
 
 ##Configuration
 This project configure a management user for the management tomcat web interface. The Username is "ManTomcat" and the password is "PwTomcat" both without the quote. If you want to change these credentials you have to edit the [init.pp file](puppet/modules/tomcat-config/manifests/init.pp) file. There are two variables which are need to do this:
