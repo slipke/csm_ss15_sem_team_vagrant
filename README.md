@@ -17,15 +17,8 @@ Before getting started, one has to decide on the Provisioning Framework. Please 
 After installing the Provisioning Framework, as described in [Setup Chef](#user-content-introduction-and-setup-chef) and [Setup Puppet](#user-content-introduction-and-setup-puppet), all the modules can be used in the single or solo mode of each framework. For detailed information about the usage of the modules, please refer to the READMES included in each module.
 
 ### Which Provision Project should be used?
-describe here our conclusion about the usage factors of puppet and chef. Which provision technology should be used for which use case / knowledge base?
-
-@@Notes@@
-Korbi's opinion: student projects: the effort which has to be invested to setup a chain with puppet / chef + vagrant can be very time consuming. If the configuration is not extraordinary, there are many setups already in the repositorys of chef and puppet. If the student does not start from sratch and instead use these projects, they can profit from a tool chain.
-training curve: For me, it was easier to use puppet that chef. Maybe i start with chef and then switched to puppet.
-conclusion: Dev Ops are very important in bigger companys. I think that chef is suitable for a small company which want to start with DevOps. For a big or developed company, puppet can be more profitable because of the enterprise solution and support. 
-
-@@Notes@@ Steve: chef offers an enterprise solution as well!
-@@Notes@@ meeting: Chef is suitable for developer, because of the strong ruby orientation. For a system admin puppet will be better because of the declarative approach.
+Chef is suitable for developer, because of the strong Ruby orientation. For a system admin Puppet will be better because of the declarative approach.
+At the end it's a choice of what you prefer or what is already in use. 
 
 ## Available Server Modules
 
