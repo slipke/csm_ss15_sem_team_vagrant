@@ -33,7 +33,7 @@ Check first if you have installed Vagrant, Virtualbox, Puppet and Librarian-Pupp
 
 
 ##Configuration of the Tomcat-Server
-This project configure a management user for the management Tomcat web interface. The Username is "ManTomcat" and the password is "PwTomcat" both without the quote. If you want to change these credentials you have to edit the [init.pp file](puppet/modules/tomcat-config/manifests/init.pp) file. There are two variables which are need to do this:
+This project configure a management user for the management Tomcat-Web-Interface. The Username is "ManTomcat" and the password is "PwTomcat" both without the quote. If you want to change these credentials you have to edit the [init.pp file](puppet/modules/tomcat-config/manifests/init.pp) file. There are two variables which are need to do this:
 *	$managementUser 
 *	$managementPW 
 
