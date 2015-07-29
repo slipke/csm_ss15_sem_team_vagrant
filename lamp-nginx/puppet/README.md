@@ -1,6 +1,6 @@
 # Installing a LAMP-Stack using Puppet
 
-This project installs and configures a simple lamp-stack with nginx, MySQL and PHP5 on a Ubuntu 14.04 Server. 
+This project installs and configures a simple lamp-stack with Nginx, MySQL and PHP5 on a Ubuntu 14.04 Server. 
 
 ## Dependencies
 
@@ -26,7 +26,7 @@ To install all required dependencies (modules) you need:
 
 ### Installation with vagrant
 
-Check first if you have installed vagrant, virtualbox, puppet and librarian-puppet. After that run the following commands:
+Check first if you have installed Vagrant, Virtualbox, Puppet and librarian-puppet. After that run the following commands:
 
 * `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and `cd lamp-nginx/puppet`
 * `librarian-puppet install`
@@ -34,9 +34,9 @@ Check first if you have installed vagrant, virtualbox, puppet and librarian-pupp
 
 ## Configure
 
-The basic version of our code installs a plain nginx, PHP and MySQL server. Nginx has one vhost called `dev.local`, which uses the path `/var/www/html` as root. MySQL is configured with the root password `root` and one database called `test`.
+The basic version of our code installs a plain Nginx, PHP and MySQL server. Nginx has one vhost called `dev.local`, which uses the path `/var/www/html` as root. MySQL is configured with the root password `root` and one database called `test`.
 
-To configure nginx, you can adjust the line `class { 'nginx': }`, i.e. if you want to install precompiled nginx from passenger, you can replace the code with the following:
+To configure Nginx, you can adjust the line `class { 'nginx': }`, i.e. if you want to install precompiled Nginx from passenger, you can replace the code with the following:
 
 ```
 class { 'nginx':

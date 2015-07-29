@@ -1,6 +1,6 @@
 # Installing a LAMP-Stack using Puppet
 
-This project installs and configures a simple lamp-stack with apache, mysql and php5 on a Ubuntu 14.04 Server. 
+This project installs and configures a simple lamp-stack with Apache, MySQL and PHP5 on a Ubuntu 14.04 Server. 
 
 ## Dependencies
 
@@ -27,7 +27,7 @@ To install all required dependencies (modules) you need:
 
 ### Installation with vagrant
 
-Check first if you have installed vagrant, virtualbox, puppet and librarian-puppet. After that run the following commands:
+Check first if you have installed Vagrant, Virtualbox, Puppet and librarian-puppet. After that run the following commands:
 
 * `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and `cd lamp-apache/puppet`
 * `librarian-puppet install`
@@ -35,9 +35,9 @@ Check first if you have installed vagrant, virtualbox, puppet and librarian-pupp
 
 ## Configure
 
-The basic version of our code installs a plain apache, PHP and MySQL server. Apache is configured with on vhost called `dev.local` with the root folder `/var/www/html`. MySQL is configured with the root password `root` and one database called `test`.
+The basic version of our code installs a plain Apache, PHP and MySQL server. Apache is configured with one vhost called `dev.local` with the root folder `/var/www/html`. MySQL is configured with the root password `root` and one database called `test`.
 
-To configure apache, you can adjust the line `class { 'apache': }`, i.e. if you want to change the configuration directory you can replace the line with the following code:
+To configure Apache, you can adjust the line `class { 'apache': }`, i.e. if you want to change the configuration directory you can replace the line with the following code:
 
 ```
 class { 'apache':
