@@ -43,7 +43,7 @@ After that you can start the Chef installation
 
 
 ## Configuration of the Tomcat-Server
-This project configure a management user for the management Tomcat web interface. The `Username is "admin"` and the `password is "password"` both without the quotes. If you want to change these credentials you have to edit the [admin.json file](/data_bags/tomcat_users/admin.json) file. 
+This project configure a management user for the management Tomcat-Web-Interface. The `Username is "admin"` and the `password is "password"` both without the quotes. If you want to change these credentials you have to edit the [admin.json file](/data_bags/tomcat_users/admin.json) file. 
 The normal user configuration can be found and changed with the file [user.json](/data_bags/tomcat_users/user.json)
 
 ## License and Author
