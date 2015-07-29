@@ -13,7 +13,7 @@ The credentials can be modified before the installation in the
 
 The credentials can be modified after the installation in the tomcat-users.xml. For this use case follow the official [documentation](http://tomcat.apache.org/tomcat-6.0-doc/manager-howto.html).
 
-##Dependencies of needed Software or existing chef recieps (Cookbooks)
+##Dependencies of needed Software or existing Puppet Modules
 
 ###needed Software
 If you use the Vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you need to install librarian-puppet. Librarian-puppet will resolve all dependencies and download the additional required modules.  A tutorial for this  can be found [here](../../README.MD). 
