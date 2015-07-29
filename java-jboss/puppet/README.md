@@ -1,10 +1,10 @@
 # Java JBoss
 
 This project installs a JBoss instance based on the module of [example42/jboss](https://forge.puppetlabs.com/example42/jboss).
-If you do no other modifications and use vagrant you will find your Jboss Server under 192.168.33.10:8080.
-If you use any other infrastructure you will find your Jboss-server under the servers ip:8080.
+If you do no other modifications and use vagrant you will find your JBoss-Server under 192.168.33.10:8080.
+If you use any other infrastructure you will find your JBoss-Server under the servers ip:8080.
 The management interface is bound to port 9900.
-This project installs a standard management user which can be used for the Web-Management-Portal of the JBoss Server:
+This project installs a standard management user which can be used for the Web-Management-Portal of the JBoss-Server:
 `Username: Administrator`
 `password: changeit!`
 
@@ -15,11 +15,11 @@ HEX( MD5( username ':' realm ':' password))
 
 The credentials can be modified after the installation with the user.sh script. For this use case follow the official [documentation](https://docs.jboss.org/author/display/AS71/add-user+utility) on:
 
-## Dependencies
+## Dependencies of needed Software or existing Puppet Modules
 
-### Installed Software
-If you use the vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you need to install librarian-puppet. Librarian-puppet will resolve all dependencies and download the additional required modules.  A tutorial for this  can be found [here](../../README.MD). 
-If you use this project as a standalone project you have to install puppet first.
+### needed Software
+If you use the Vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you need to install librarian-puppet. Librarian-puppet will resolve all dependencies and download the additional required modules.  A tutorial for this  can be found [here](../../README.MD). 
+If you use this project as a standalone project you have to install Ouppet first.
 
 ### Puppet Modules
 * [puppetlabs-java](https://forge.puppetlabs.com/puppetlabs/java)
@@ -27,7 +27,7 @@ If you use this project as a standalone project you have to install puppet first
 
 
 ## Installation
-Check first if you have installed vagrant, virtualbox, puppet and librarian-puppet. After that run the following commands:
+Check first if you have installed Vagrant, Virtualbox, Puppet and librarian-puppet. After that run the following commands:
 
 * `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and `cd lamp-apache/puppet`
 * `librarian-puppet install`
@@ -35,7 +35,7 @@ Check first if you have installed vagrant, virtualbox, puppet and librarian-pupp
 
 
 ## Configuration
-This project configure a management user for the management jboss web interface. The Username is "Administrator" and the password is "changeit!" both without the quote. If you want to change these credentials you have to edit the [init.pp file](puppet/modules/jboss-config/manifests/init.pp) file. There are two variables which are need to do this:
+This project configure a management user for the management JBoss web interface. The Username is "Administrator" and the password is "changeit!" both without the quote. If you want to change these credentials you have to edit the [init.pp file](puppet/modules/jboss-config/manifests/init.pp) file. There are two variables which are need to do this:
 * $admin_user
 *$admin_pass
 Keep in  mind, that the password must be insert in the following format:
