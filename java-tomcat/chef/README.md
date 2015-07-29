@@ -19,7 +19,7 @@ The credentials can be modified after the installation in  the tomcat-users.xml.
 ## Dependencies of needed Software or existing Chef recieps (Cookbooks)
 
 ###Needed Software
-If you use the Vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf) README.
+If you use the Vagrant solution you only have to install [Vagrant](https://www.vagrantup.com/) and [Virtualbox](https://www.virtualbox.org/). Additional you will need the [Vagrant-Berkshelf Plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the [Vagrant-Berkshelf Plugin](https://github.com/berkshelf/vagrant-berkshelf) README.
 If you use this cookbook as a standalone project you have to install Chef first.
 
 
