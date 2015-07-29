@@ -14,7 +14,7 @@ HEX( MD5( username ':' realm ':' password))
 
 The credentials can be modified after the installation with the user.sh script. For this use case follow the official [documentation](https://docs.jboss.org/author/display/AS71/add-user+utility).
 
-## Dependencies to needed Software or existing chef recieps (Cookbooks)
+## Dependencies of needed Software or existing chef recieps (Cookbooks)
 
 ### needed Software
 If you use the vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additionally you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf) README.
