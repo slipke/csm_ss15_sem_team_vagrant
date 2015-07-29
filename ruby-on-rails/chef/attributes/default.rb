@@ -1,6 +1,6 @@
 # encoding: utf-8
 #
-# Cookbook Name:: mysql_hardening
+# Cookbook Name:: ruby_on_rails
 # Attributes:: default
 #
 # Copyright 2015, Sebastian Löw, Hochschule der Medien Stuttgart
@@ -19,4 +19,5 @@
 #
 
   default['ror']['server_dir']	=	'/tmp/rails_test' # options: String
-  default[:languages][:ruby][:default_version] = '1.9.1'
+  default['ror']['ruby_version'] = '2.2.2'
+  default['ror']['bash_file'] = '.bashrc'
