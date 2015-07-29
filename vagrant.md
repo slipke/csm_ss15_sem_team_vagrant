@@ -8,7 +8,7 @@ Vagrant is available for Windows, Linux and Mac. You can download your package [
 If you use a Chef project you have to install the [Vagrant-Berkshelf-Plugin](https://github.com/berkshelf/vagrant-berkshelf).
 
 ####Puppet
-If you use a Puppet project you have to install the [Librarian-Puppet](https://github.com/rodjek/librarian-puppet). This requieres additional the installation of [puppet](https://docs.puppetlabs.com/guides/install_puppet/pre_install.html#next-install-puppet) and ruby.
+If you use a Puppet project you have to install the [Librarian-Puppet](https://github.com/rodjek/librarian-puppet). This requieres additional the installation of [Puppet](https://docs.puppetlabs.com/guides/install_puppet/pre_install.html#next-install-puppet) and Ruby.
 
 
 
