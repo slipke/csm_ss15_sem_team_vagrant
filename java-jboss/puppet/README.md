@@ -35,7 +35,7 @@ Check first if you have installed Vagrant, Virtualbox, Puppet and Librarian-Pupp
 
 
 ## Configuration of the JBoss-Server
-This project configure a management user for the management JBoss web interface. The Username is "Administrator" and the password is "changeit!" both without the quote. If you want to change these credentials you have to edit the [init.pp file](puppet/modules/jboss-config/manifests/init.pp) file. There are two variables which are need to do this:
+This project configure a management user for the management JBoss-Web-Interface. The Username is "Administrator" and the password is "changeit!" both without the quote. If you want to change these credentials you have to edit the [init.pp file](puppet/modules/jboss-config/manifests/init.pp) file. There are two variables which are need to do this:
 * $admin_user
 *$admin_pass
 Keep in  mind, that the password must be insert in the following format:
