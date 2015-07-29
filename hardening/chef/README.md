@@ -1,6 +1,6 @@
 # Description 
 All cookbooks where written for the Chef Framework in Version 12.x. Each cookbook focuses on one specific hardening task and are compatible with each other. They provide secure and easy to customize configurations. All settings can be changed in the central cookbook configuration file "COOKBOOK/attributes/default.rb".
-To get get started quickly, there is only one external dependencies, see section [Dependencies][dependencies]. Once resolved they run out of the box in the chef solo mode and can be included in a Vagrant script. Even not tested, they should work in the Chef Server Mode, too.
+To get get started quickly, there is only one external dependencies, see section [Dependencies](#dependencies). Once resolved they run out of the box in the chef solo mode and can be included in a Vagrant script. Even not tested, they should work in the Chef Server Mode, too.
 
 For more details about the cookbooks, please refer to the particular readme files.
 

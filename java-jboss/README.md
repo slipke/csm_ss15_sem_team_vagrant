@@ -3,7 +3,7 @@
 ##Description
 This project installs and configures a java jboss server.
 Either Chef and puppet are supported to automatically run the necessary tasks. The scripts speed up the process of setting up a fully equipped java jboss server for people who don't want to deal with details.
-This folder contains the two provisioning possibilities for jboss. Both install a jboss 7 server with an management user. The folders descripte with their names the used technology for provisioning.  Further information can be found under [chef/README.md](chef/README.md) or [puppet/README.md](puppet/README.md).
+This folder contains the two provisioning possibilities for jboss. Both install a jboss 7 server with an management user. The folders names state the used provivision technology.  Further information can be found under [chef/README.md](chef/README.md) and [puppet/README.md](puppet/README.md).
 
 
 ##Requirements
@@ -11,7 +11,7 @@ This folder contains the two provisioning possibilities for jboss. Both install 
 * Puppet (tested with version 3.7)
 
 ##Platforms
-* Ubuntu 14 and older (should also work on later versions
+* Ubuntu 14 and older (should also work on later versions)
 * Debian 8 and later
 
 ## License and Author

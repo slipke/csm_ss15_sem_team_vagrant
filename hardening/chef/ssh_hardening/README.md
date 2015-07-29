@@ -16,7 +16,7 @@ The second recipe "server" provides secure ssh server configurations. Both can b
 The [opscode apt cookbook](https://github.com/opscode-cookbooks/apt) makes sure, the apt reposítory list is up to date. 
 Berkshelf is used as a dependency management tool. To resolve and install all the Dependencies cd into the directory and execute following command:
 
-### Berkshelf3
+### Berkshelf 3
 * `berks vendor cookbooks`
 
 ### Berkshelf 2

@@ -3,27 +3,27 @@
 This project installs and configures a simple lamp-stack with apache2, mysql and php5 on a Ubuntu 14.04 Server. 
 The credentials for the mysql-user can be configured in the [default.rb](https://github.com/slipke/csm_ss15_sem_team_vagrant/blob/master/lamp-apache/chef/project_cookbooks/lampp/recipes/default.rb) file.
 
-##Dependencies
+## Dependencies
 
-###Installed software
-If you only want to quickly setup a lamp stack just download  [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the github readme of vagrant-berkshelf plugin.
+### Installed Software
+If you only want to quickly setup a lamp stack just download  [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf) README.
 If you want to use this project without vagrant but with chef get the [ChefDK](https://downloads.chef.io/chef-dk/) which contains all neccessary tools to setup the lamp-stack
 
-###cookbooks
+### Cookbooks
 * [apt-get](https://supermarket.chef.io/cookbooks/apt)
 * [apache](https://supermarket.chef.io/cookbooks/apache2)
 * [mysql](https://supermarket.chef.io/cookbooks/mysql)
 * [php](https://supermarket.chef.io/cookbooks/php)
 
 
-##Installation
+## Installation
 
-###Installation with vagrant
-Check first if you have installed vagrant and virtualbox.  After that just run `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` an navigate to /lamp-apache/chef and run `vagrant up` from your terminal
+### Installation with vagrant
+Check first if you have installed vagrant and virtualbox.  After that just run `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and navigate to /lamp-apache/chef and run `vagrant up` from your terminal
 
 ###Installation with Chef and Berkshelf
 Navigate to your chef directory and type the following:
-#### Berkshelf3
+#### Berkshelf 3
     * berks vendor cookbooks
 
 #### Berkshelf 2

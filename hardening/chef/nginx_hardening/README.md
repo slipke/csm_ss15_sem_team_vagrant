@@ -3,7 +3,7 @@
 ## Description
 This cookbook brings secure nginx settings to your system. It installs/updates the openssl and nginx package and provides you with a secure and easy to manage nginx configuration. 
 All changes are made in "/etc/nginx/nginx.conf". Besides the nginx hardening, this cookbook also gives you the option of a very basic, tailored system optimization. 
-Please refer to the section [Attributes](#Attributes) for further information. The hardening and install/update recipes are seperate and can be included or excluded at will.
+Please refer to the section [Attributes](#attributes) for further information. The hardening and install/update recipes are seperate and can be included or excluded at will.
 
 ## Requirements
 * [Chef Server, Client or Chef-dk](https://www.chef.io) (tested with Chef version 12.x)
@@ -17,7 +17,7 @@ Please refer to the section [Attributes](#Attributes) for further information. T
 The [opscode apt cookbook](https://github.com/opscode-cookbooks/apt) makes sure, the apt reposítory list is up to date. 
 Berkshelf is used as a dependency management tool. To resolve and install all the Dependencies cd into the directory and execute following command:
 
-### Berkshelf3
+### Berkshelf 3
     * berks vendor cookbooks
 
 ### Berkshelf 2

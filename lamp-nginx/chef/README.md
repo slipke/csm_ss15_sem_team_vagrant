@@ -24,7 +24,7 @@ Check first if you have installed vagrant and virtualbox.  After that just run `
 
 ###Installation with Chef and Berkshelf
 Navigate to your chef directory and type the following:
-#### Berkshelf3
+#### Berkshelf 3
     * berks vendor cookbooks
 
 #### Berkshelf 2
