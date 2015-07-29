@@ -39,7 +39,7 @@ After that you can start the chef installation with:
  * `sudo chef-client --local-mode --runlist 'recipe[apt]",recipe[java],recipe[jboss7],recipe[HdM-Jboss-chef::jboss-config]'`
 
 ## Configuration of the JBoss-Server
-This project configures a management user for managing the JBoss web interface. The Username is `"Administrator"` and the password is `"changeit!"` both without the quote. If you want to change these credentials you have to edit the [default.rb](/attributes/default.rb) file. 
+This project configures a management user for managing the JBoss-Web-Interface. The Username is `"Administrator"` and the password is `"changeit!"` both without the quote. If you want to change these credentials you have to edit the [default.rb](/attributes/default.rb) file. 
 Keep in  mind, that the password must be inserted in the following format:
 HEX( MD5( username ':' realm ':' password))
 
