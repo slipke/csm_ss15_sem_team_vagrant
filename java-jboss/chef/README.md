@@ -16,9 +16,9 @@ The credentials can be modified after the installation with the user.sh script. 
 
 ## Dependencies of needed Software or existing chef recieps (Cookbooks)
 
-### needed Software
-If you use the vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additionally you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf) README.
-If you use this cookbook as a standalone projekt you have to install chef.
+###Needed Software
+If you use the Vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additionally you will need the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf). For installation tutorials read the [vagrant-berkshelf plugin](https://github.com/berkshelf/vagrant-berkshelf) README.
+If you use this cookbook as a standalone projekt you have to install Chef.
 
 ### Cookbooks
 * [apt-get](https://supermarket.chef.io/cookbooks/apt)
@@ -27,10 +27,10 @@ If you use this cookbook as a standalone projekt you have to install chef.
 
 
 ## Installation of this project
-Check first if you have installed vagrant and virtualbox.  After that, check out the project in an user writeable folder.
+Check first if you have installed Vagrant and Virtualbox.  After that, check out the project in an user writeable folder.
 Open the commandline in this folder and just type: vagrant up
 ### Manual installation of this project
-If you use this project as standalone project, keep in mind that is only tested and verified with the Linux [hashicorp/precise32](https://atlas.hashicorp.com/hashicorp/boxes/precise32) vagrant box. If you have a vm, where you want to setup this project, you should have the [chefdk](https://downloads.chef.io/chef-dk/) installed on your vm. Berkshelf is needed for the Dependency Management ( this is already included in the chefdk). When you have installed the chefdk (or chef + berkshelf), you should switch to the git repo.
+If you use this project as standalone project, keep in mind that is only tested and verified with the Linux [hashicorp/precise32](https://atlas.hashicorp.com/hashicorp/boxes/precise32) Vagrant box. If you have a VM, where you want to setup this project, you should have the [chefdk](https://downloads.chef.io/chef-dk/) installed on your VM. Berkshelf is needed for the Dependency Management ( this is already included in the chefdk). When you have installed the chefdk (or Chef + berkshelf), you should switch to the git repo.
 
 Now you can resolve the dependencies by typing: 
  * `berks install`
