@@ -1,5 +1,5 @@
 class common {
-  # Run apt-get update first
+  # We need to run apt-get update first
   exec { "apt-update":
     command => "/usr/bin/apt-get update"
   }

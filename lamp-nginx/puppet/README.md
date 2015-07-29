@@ -1,23 +1,26 @@
 # Installing a LAMP-Stack using Puppet
 
-This project installs and configures a simple lamp-stack with nginx, mysql and php5 on a Ubuntu 14.04 Server. 
+This project installs and configures a simple lamp-stack with nginx, MySQL and PHP5 on a Ubuntu 14.04 Server. 
 
 ## Dependencies
 
 ### Installed software
 
-If you only want to quickly setup a lamp stack just download [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/).
-To install all required modules you need:
+For a simple development installation you need the following software:
 
-* [puppet](https://puppetlabs.com) (`sudo gem install puppet`)
-* [librarian-puppet](https://github.com/rodjek/librarian-puppet) (`sudo gem install librarian-puppet`)
+* [vagrant](https://www.vagrantup.com/)
+* [virtualbox](https://www.virtualbox.org/)
 
-### Cookbooks
+To install all required dependencies (modules) you need:
+
+* [puppet](https://puppetlabs.com)
+* [librarian-puppet](https://github.com/rodjek/librarian-puppet)
+
+### Used Cookbooks
 
 * [jfryman-nginx](https://forge.puppetlabs.com/jfryman/nginx)
 * [mayflower-php](https://forge.puppetlabs.com/mayflower/php)
 * [puppetlabs-mysql](https://forge.puppetlabs.com/puppetlabs/mysql)
-
 
 ## Installation
 
@@ -31,7 +34,18 @@ Check first if you have installed vagrant, virtualbox, puppet and librarian-pupp
 
 ## Configure
 
-You can change the mysql settings in the file _projetct_modules/common/manifests/init.pp_. For PHP settings read the documentation at [puppetlabs](https://forge.puppetlabs.com/mayflower/php)
+The basic version of our code installs a plain nginx, PHP and MySQL server. Nginx has one vhost called `dev.local`, which uses the path `/var/www/html` as root. MySQL is configured with the root password `root` and one database called `test`.
+
+To configure nginx, you can adjust the line `class { 'nginx': }`, i.e. if you want to install precompiled nginx from passenger, you can replace the code with the following:
+
+```
+class { 'nginx':
+    package_source  => 'passenger'
+}
+```
+
+If you want to configure PHP, you need [hiera](http://docs.puppetlabs.com/hiera/latest/) installed, then you can add and change the hiera.yml as described in the [documentation](http://php.puppet.mayflower.de).
+Additionally, if you want to change the MySQL settings, just have a look at the [MySQL documentation](https://forge.puppetlabs.com/puppetlabs/mysql).
 
 ## License and Author
  * Author: Simon Lipke sl110@hdm-stuttgart.de

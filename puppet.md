@@ -20,13 +20,18 @@ you need a tool like [Vagrant](https://www.vagrantup.com) to manage your virtual
 
 ## Setup a local project
 
-### Install puppet
+### Requirements
 
-To install puppet you can use [gem](https://rubygems.org): `sudo gem install puppet`
+* [Vagrant](https://github.com/slipke/csm_ss15_sem_team_vagrant/blob/master/vagrant.md) is installed
+* [RubyGems](https://rubygems.org) is installed
 
-### Install librarian-puppet
+### Install Puppet
 
-To install the CLI tool librarian-puppet, you can user [gem](https://rubygems.org): `sudo gem install librarian-puppet`
+To install Puppet you can use the following command: `sudo gem install puppet`
+
+### Install [librarian-puppet](https://github.com/rodjek/librarian-puppet)
+
+To install the CLI tool [librarian-puppet](https://github.com/rodjek/librarian-puppet)  you can use the following command: `sudo gem install librarian-puppet`
 
 ### (Option 1) Install librarian-puppet to manage modules
 
@@ -51,7 +56,7 @@ You can also manually download any module, i.e. from [Puppet forge](https://forg
 Puppet typically runs in a master/slave architecture, where the master server holds the configurations, which can requested by the slaves (nodes).
 The nodes require the _Puppet Agent_ application to be installed, which typically runs in the background. 
 The servers need the [_Puppet Server_](http://docs.puppetlabs.com/puppetserver/1.0/index.html) application, typically managed by a web-server as a rack application.
-After a given time every node syncs with the puppet master server by sending facts, and expects a compiled catalog as response.
+After a given time every node syncs with the Puppet master server by sending facts, and expects a compiled catalog as response.
 
 ## Puppet Apply
 
@@ -68,6 +73,8 @@ system for changes, and if needed applies them.
 - Agents need good network to reach master servers
 
 ## Compiling a catalog
+
+The following steps are performed when a catalog is being compiled:
 
 1. Retrieve the node object
 2. Set Variables from the Node Object, from Facts, and from the Certificate
@@ -94,7 +101,7 @@ Puppet always starts compiling with the [_main manifest_](https://docs.puppetlab
 ## Resources
 
 A _resource_ describes some aspect of a system, i.e. a service that needs to be managed or a package that needs to be installed. 
-A _resource declaration_ is a block of puppet code, which describes the resource.
+A _resource declaration_ is a block of Puppet code, which describes the resource.
 
 Sample:
 

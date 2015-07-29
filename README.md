@@ -12,9 +12,9 @@ All the module can be reused, forked and edited as wanted. A compatibilty with e
 
 
 ## How to use this Project?
-Before getting started, one has to decide on the Provisioning Framework. Please refer to chapter [which provision project should be used?](#which-provision-project-should-be-used?) for decision making support. Once the decision is made, just download or clone the git repository onto the machine you want to orchestrate. 
+Before getting started, one has to decide on the Provisioning Framework. Please refer to chapter [which provision project should be used?](#user-content-which-provision-project-should-be-used) for decision making support. Once the decision is made, just download or clone the git repository onto the machine you want to orchestrate. 
 
-After installing the Provisioning Framework, as described in [Setup Chef](#setup-chef) and [Setup Puppet](#setup-puppet), all the modules can be used in the single or solo mode of each framework. For detailed information about the usage of the modules, please refer to the READMES included in each module.
+After installing the Provisioning Framework, as described in [Setup Chef](#user-content-introduction-and-setup-chef) and [Setup Puppet](#user-content-introduction-and-setup-puppet), all the modules can be used in the single or solo mode of each framework. For detailed information about the usage of the modules, please refer to the READMES included in each module.
 
 ### Which Provision Project should be used?
 describe here our conclusion about the usage factors of puppet and chef. Which provision technology should be used for which use case / knowledge base?

@@ -11,6 +11,12 @@ class common {
   ###
   class { 'apache':  }
 
+  # Install a vhost
+  apache::vhost { 'dev.local':
+    port    => '80',
+    docroot => '/var/www/html',
+  }
+
   ####
   # Install php
   ####

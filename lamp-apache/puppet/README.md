@@ -6,10 +6,17 @@ This project installs and configures a simple lamp-stack with apache, mysql and 
 
 ### Installed software
 
-If you only want to quickly setup a lamp stack just download [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/).
-To install all required modules you need [librarian-puppet](https://github.com/rodjek/librarian-puppet) (`sudo gem install librarian-puppet`) and [puppet](https://puppetlabs.com) (`sudo gem install puppet`).
+For a simple development installation you need the following software:
 
-### Cookbooks
+* [vagrant](https://www.vagrantup.com/)
+* [virtualbox](https://www.virtualbox.org/)
+
+To install all required dependencies (modules) you need:
+
+* [puppet](https://puppetlabs.com)
+* [librarian-puppet](https://github.com/rodjek/librarian-puppet)
+
+### Used Cookbooks
 
 * [puppetlabs-apache](https://forge.puppetlabs.com/puppetlabs/apache)
 * [mayflower-php](https://forge.puppetlabs.com/mayflower/php)
@@ -28,7 +35,19 @@ Check first if you have installed vagrant, virtualbox, puppet and librarian-pupp
 
 ## Configure
 
-To configure just read the documentations from the cookbooks-section.
+The basic version of our code installs a plain apache, PHP and MySQL server. Apache is configured with on vhost called `dev.local` with the root folder `/var/www/html`. MySQL is configured with the root password `root` and one database called `test`.
+
+To configure apache, you can adjust the line `class { 'apache': }`, i.e. if you want to change the configuration directory you can replace the line with the following code:
+
+```
+class { 'apache':
+    conf_dir => '/etc/conf/apache2'
+}
+```
+
+If you want to configure PHP, you need [hiera](http://docs.puppetlabs.com/hiera/latest/) installed, then you can add and change the hiera.yml as described in the [documentation](http://php.puppet.mayflower.de).
+Additionally, if you want to change the MySQL settings, just have a look at the [MySQL documentation](https://forge.puppetlabs.com/puppetlabs/mysql).
+
 
 ## License and Author
  * Author: Simon Lipke sl110@hdm-stuttgart.de
