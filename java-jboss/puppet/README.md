@@ -18,7 +18,7 @@ The credentials can be modified after the installation with the user.sh script. 
 ## Dependencies of needed Software or existing Puppet Modules
 
 ###Needed Software
-If you use the Vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you need to install librarian-puppet. Librarian-puppet will resolve all dependencies and download the additional required modules.  A tutorial for this  can be found [here](../../README.MD). 
+If you use the Vagrant solution you only have to install [vagrant](https://www.vagrantup.com/) and [virtualbox](https://www.virtualbox.org/). Additional you need to install Librarian-Puppet. Librarian-Puppet will resolve all dependencies and download the additional required modules.  A tutorial for this  can be found [here](../../README.MD). 
 If you use this project as a standalone project you have to install Ouppet first.
 
 ### Puppet Modules
@@ -27,7 +27,7 @@ If you use this project as a standalone project you have to install Ouppet first
 
 
 ## Installation of this project
-Check first if you have installed Vagrant, Virtualbox, Puppet and librarian-puppet. After that run the following commands:
+Check first if you have installed Vagrant, Virtualbox, Puppet and Librarian-Puppet. After that run the following commands:
 
 * `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and `cd lamp-apache/puppet`
 * `librarian-puppet install`
