@@ -26,7 +26,7 @@ If you use this project as a standalone project you have to install Ouppet first
 * [jboss](https://forge.puppetlabs.com/example42/jboss)
 
 
-## Installation
+## Installation of this project
 Check first if you have installed Vagrant, Virtualbox, Puppet and librarian-puppet. After that run the following commands:
 
 * `git clone https://github.com/slipke/csm_ss15_sem_team_vagrant.git` and `cd lamp-apache/puppet`
@@ -34,7 +34,7 @@ Check first if you have installed Vagrant, Virtualbox, Puppet and librarian-pupp
 * `vagrant up`
 
 
-## Configuration
+## Configuration of the JBoss-Server
 This project configure a management user for the management JBoss web interface. The Username is "Administrator" and the password is "changeit!" both without the quote. If you want to change these credentials you have to edit the [init.pp file](puppet/modules/jboss-config/manifests/init.pp) file. There are two variables which are need to do this:
 * $admin_user
 *$admin_pass
