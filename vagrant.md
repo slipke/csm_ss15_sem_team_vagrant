@@ -85,4 +85,7 @@ These commands can be used in your shell or command line interface. Just open su
 
 
 ##Source
- For more Information refer to the offical documentation of [vagrant](https://docs.vagrantup.com/v2/)
+For more Information refer to the offical documentation of [vagrant](https://docs.vagrantup.com/v2/). 
+Other external sources may help troubleshooting problems and give more information about the technology behind Vagrant, here are some examples.
+* [external tutorial](https://github.com/mitchellh/vagrant)
+* [offical vagrant documentation](https://docs.vagrantup.com/v2/)

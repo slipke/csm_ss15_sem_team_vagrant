@@ -1,11 +1,11 @@
 # Infrastructure as Code
-The following README pages summarize our project results in the class "System Engineering and Management" in the summer semester 2015 at the [Hochschule der Medien Stuttgart](http://www.hdm-stuttgart.de/) in the major [Computer Science and Media](http://www.mi.hdm-stuttgart.de/csm).
+The following README pages summarize our project results from the class "System Engineering and Management" in the summer semester 2015 at the [Hochschule der Medien Stuttgart](http://www.hdm-stuttgart.de/) in the major [Computer Science and Media](http://www.mi.hdm-stuttgart.de/csm).
 
 ## Why this Project?
 Virtual servers are usually short living, often just used for days or in the best case a couple of months. The Setup from scratch is tedious and time consuming. To mimize the manual work, this project wrapped common server usage szenarios with common hardening tasks into code. Two popular and Open Source frameworks where used, [Chef](https://www.chef.io/) and [Puppet](https://puppetlabs.com/). Under normal circumstances both orchestrating frameworks rely on a Master - Slave configuration, where the Master manages multiple Slaves. In this project we set great value upon a Master free approach. That way the power of orchestration works on just a single machine, too. It also cuts down the time of setting up the infrastructure. 
 All the written modules encapsule only one single purpose, that simplicity makes it easy to configure and install those modules. 
 To support the development process from the beginning, every module includes a Vagrant setup, with which a local Virtual Machine on the developers machine can be deployed. 
-One command automatically downloads the specified Operating System, configures it with the selected modules and exposes the Virtual Machine to the host on a configurable ip address. The whole concept which was followed is, to provide a seamless and identical setup from the development to the live systems. Problems like "it worked on my developer machine" won't happen ever again. Vagrant runs on all major Operating System, as long as it can run Oracle Virtual Box.
+One command automatically downloads the specified Operating System, configures it with the selected modules and exposes the Virtual Machine to the host on a configurable ip address. The whole concept which was followed, is to provide a seamless and identical setup from the development to the live systems. Problems like "it worked on my developer machine" won't happen ever again. Vagrant runs on all major Operating System, as long as it can run Oracle Virtual Box.
 
 With the help of this project, only very litte Linux administration knowledge is neccessary to setup a secure and performant developing and live server environment.
 All the module can be reused, forked and edited as wanted. A compatibilty with each other goes without speaking.
@@ -27,24 +27,13 @@ conclusion: Dev Ops are very important in bigger companys. I think that chef is 
 @@Notes@@ Steve: chef offers an enterprise solution as well!
 @@Notes@@ meeting: Chef is suitable for developer, because of the strong ruby orientation. For a system admin puppet will be better because of the declarative approach.
 
-## Install Vagrant (Link to vagrant.md)
+## Available Server Modules
 
-* [Project specific installation documentation](./vagrant.md)
-
-There are some more links which may help you troubleshooting your problems or getting more information about the vagrant technology.
-* [external tutorial](https://github.com/mitchellh/vagrant)
-* [offical vagrant documentation](https://docs.vagrantup.com/v2/)
-    
-## [Introduction and Setup Chef](chef.md) 
-
-## [Introduction and Setup Puppet](puppet.md) 
-
-## Used software / Available Server Modules
-
-* Java [JBoss](https://docs.jboss.org/author/display/AS71/Documentation)
-* Java [Tomcat](http://tomcat.apache.org/tomcat-6.0-doc/)
-* LAMP (Linux, Apache, MySQL and PHP)
-* LEMP (Linux, Nginx, MySQL and PHP)
+* Java JBoss Server - [Chef](/java-jboss/chef), [Puppet](/java-jboss/puppet)
+* Java Tomcat Server -  [Chef](/java-tomcat/chef), [Puppet](/java-tomcat/puppet)
+* LAMP (Linux, Apache, MySQL and PHP) - [Chef](/lamp-apache/chef), [Puppet](/lamp-apache/puppet)
+* LEMP (Linux, Nginx, MySQL and PHP) - [Chef](/lamp-nginx/chef), [Puppet](/lamp-nginx/puppet)
+* Ruby On Rails - [Chef](/ruby-on-rails/chef)
 
 ## Available Hardening Modules
 The hardening modules are a collection of common hardening tasks for Debian and Debian based Systems like Ubuntu. All hardening tasks are available for both Chef and Puppet. The Following Modules are provided:
@@ -63,9 +52,11 @@ All modules have been tested with:
 
 Even though not tested, they also should work with previous and later Versions and other Debian based distributions.
 
+## [Project Specific Vagrant Installation Documentation](./vagrant.md)
+    
+## [Introduction and Setup Chef](chef.md) 
 
-
-
+## [Introduction and Setup Puppet](puppet.md) 
 
 ## Contributors
 * Steffen Hinderer
@@ -88,4 +79,4 @@ http://www.apache.org/licenses/LICENSE-2.0
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## Special thanks to...
-...our mentor and lecturer Thomas Pohl for his support and the interesting sessions tons of information and lots of insights.
+...our mentor and lecturer Thomas Pohl for his support and the interesting sessions, tons of information and lots of insights.
