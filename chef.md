@@ -52,7 +52,7 @@ As an alternative you can run chef since v11.8 in local-mode by using `chef-clie
     - `roles`// used to store the files that are available to thr Chef Server
   
 
-## Librarian-chef/Berkshelf
+## Managing dependencies with Berkshelf
 With Chef your recipes get executed exactly in the order they are specified in your cookbooks. This can lead to missing dependencies which are neccessary for some recipes to work. As it can be very confusing to take care of all dependencies there are tools which take care of that for you.
 The currently most popular dependency manager for Chef is [Berkshelf](http://berkshelf.com/) which is also part of the ChefDK
 
