@@ -16,7 +16,7 @@ To install all required dependencies (modules) you need:
 * [puppet](https://puppetlabs.com)
 * [librarian-puppet](https://github.com/rodjek/librarian-puppet)
 
-### Used Cookbooks
+### Used Modules
 
 * [puppetlabs-apache](https://forge.puppetlabs.com/puppetlabs/apache)
 * [mayflower-php](https://forge.puppetlabs.com/mayflower/php)

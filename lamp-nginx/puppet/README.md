@@ -16,7 +16,7 @@ To install all required dependencies (modules) you need:
 * [puppet](https://puppetlabs.com)
 * [librarian-puppet](https://github.com/rodjek/librarian-puppet)
 
-### Used Cookbooks
+### Used Modules
 
 * [jfryman-nginx](https://forge.puppetlabs.com/jfryman/nginx)
 * [mayflower-php](https://forge.puppetlabs.com/mayflower/php)
