@@ -16,11 +16,13 @@ class mysql_hardening (
     $server_dir = '/tmp/rails_test',
     $ruby_version = '2.2.2',
     $bash_file = '.bashrc',
-)
+) {
+
 $path = "/usr/:/bin/:/sbin/:/usr/sbin:/usr/bin/:/root/.rbenv/bin" 
+Package { ensure => "installed" }
 $enhancers = [ "make", "patch","nodejs","git","curl","gcc", "sqlite3","libsqlite3-dev","zlib1g-dev","libssl-dev","libreadline-dev"  ]
 
-Package { $enhancers: ensure => "installed" }
+package { $enhancers: }
 
 exec { "InstallRbenv":
                 command => 'curl -L https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash',
@@ -60,17 +62,19 @@ exec { "install_rails":
     }
 
 exec { "install_sqlite":
-                command => ,
+                command => '/root/.rbenv/bin/rbenv exec gem install sqlite3 --no-ri --no-rdoc',
                 path => $path
     }
 
 exec { "create_new_ror_app":
-                command => ,
+                command => '/root/.rbenv/bin/rbenv exec rails new $server_dir',
                 path => $path
     }
 
 exec { "start_ror_server":
-                command => ,
+                cwd => $server_dir,
+                command => '/root/.rbenv/bin/rbenv exec rails server -b0.0.0.0 -d',
                 path => $path
     } 
 
+}
